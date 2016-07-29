@@ -1,0 +1,9 @@
+C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicatedCodeTests\bin\Debug\DuplicatedCodeTests.dll
+C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicatedCodeTests\bin\Debug\DuplicatedCodeTests.pdb
+C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicatedCodeTests\bin\Debug\DuplicatedCode.dll
+C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicatedCodeTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicatedCodeTests\bin\Debug\DuplicatedCode.pdb
+C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicatedCodeTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicatedCodeTests\obj\Debug\DuplicatedCodeTests.csprojResolveAssemblyReference.cache
+C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicatedCodeTests\obj\Debug\DuplicatedCodeTests.dll
+C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicatedCodeTests\obj\Debug\DuplicatedCodeTests.pdb
