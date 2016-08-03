@@ -20,5 +20,15 @@ namespace Refactoring
         {
             return Car.Drive();
         }
+
+        //inappropirate intimacy
+        public string BuySpareWheel()
+        {
+            while (Car.NumberOfWheels <= 4)
+            {
+                Car.NumberOfWheels ++;
+            }
+            return String.Format("My car now has {0} number of wheels", Car.NumberOfWheels);
+        }
     }
 }

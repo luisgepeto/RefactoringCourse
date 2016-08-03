@@ -47,6 +47,7 @@
     <Compile Include="Car.cs" />
     <Compile Include="CarDriver.cs" />
     <Compile Include="CreditTransaction.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="DebitTransaction.cs" />
     <Compile Include="InsuranceQuote.cs" />
     <Compile Include="Driver.cs" />

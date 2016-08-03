@@ -28,5 +28,28 @@ namespace RefactoringTests
             //Assert
             Assert.AreEqual("I am driving a car", driveOutput, "The vehicle driven must be a car");
         }
+
+        [TestMethod]
+        public void CarDriver_BuySpareWheel_0Wheels_Returns5()
+        {
+            //Arrange
+            var carDriver = new CarDriver(DateTime.Now, 0, "LIC", DateTime.Now, "Toyota");
+            carDriver.Car.NumberOfWheels = 0;
+            //Act
+            var buySpareWheel = carDriver.BuySpareWheel();
+            //Assert
+            Assert.AreEqual("My car now has 5 number of wheels", buySpareWheel, "The messages should match");
+        }
+
+        [TestMethod]
+        public void CarDriver_BuySpareWheel_4Wheels_Returns5()
+        {
+            //Arrange
+            var carDriver = new CarDriver(DateTime.Now, 0, "LIC", DateTime.Now, "Toyota");
+            //Act
+            var buySpareWheel = carDriver.BuySpareWheel();
+            //Assert
+            Assert.AreEqual("My car now has 5 number of wheels", buySpareWheel, "The messages should match");
+        }
     }
 }
