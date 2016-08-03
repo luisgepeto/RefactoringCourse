@@ -1,0 +1,5 @@
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicateCode\bin\Debug\Refactoring.dll
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicateCode\bin\Debug\Refactoring.pdb
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicateCode\obj\Debug\Refactoring.csprojResolveAssemblyReference.cache
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicateCode\obj\Debug\Refactoring.dll
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicateCode\obj\Debug\Refactoring.pdb

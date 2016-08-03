@@ -1,0 +1,9 @@
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicatedCodeTests\bin\Debug\RefactoringTests.dll
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicatedCodeTests\bin\Debug\RefactoringTests.pdb
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicatedCodeTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicatedCodeTests\bin\Debug\Refactoring.dll
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicatedCodeTests\bin\Debug\Refactoring.pdb
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicatedCodeTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicatedCodeTests\obj\Debug\RefactoringTests.csprojResolveAssemblyReference.cache
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicatedCodeTests\obj\Debug\RefactoringTests.dll
+C:\Users\luis\Documents\Refactoring\refactoring\DuplicatedCodeTests\obj\Debug\RefactoringTests.pdb
