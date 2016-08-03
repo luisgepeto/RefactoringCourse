@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DuplicatedCode
+namespace Refactoring
 {
     public abstract class InvestmentTransaction : Transaction
     {
@@ -9,11 +9,10 @@ namespace DuplicatedCode
         }
         //Speculative Generality
         public string InvestmentFundName { get; set; }
-        public string InvestmentPeriod { get; set; }
 
         public string GetSummary()
         {
-            return String.Format("This is an investment transaction for ${0} in fund {1} for {2} period", Amount, InvestmentFundName, InvestmentPeriod);
+            return String.Format("This is an investment transaction for ${0} in fund {1}", Amount, InvestmentFundName);
         }
     }
 }

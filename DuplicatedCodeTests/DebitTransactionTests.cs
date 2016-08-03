@@ -1,8 +1,7 @@
-﻿using System;
-using DuplicatedCode;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Refactoring;
 
-namespace DuplicatedCodeTests
+namespace RefactoringTests
 {
     [TestClass]
     public class DebitTransactionTests

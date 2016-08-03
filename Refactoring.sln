@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Duplicated Code", "Duplicated Code", "{6F2992B8-AEB0-483A-BC6C-EAB2A7D3EA2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringTests", "DuplicatedCodeTests\RefactoringTests.csproj", "{7CAB306C-E53D-4BA0-B598-1BA12B2EF185}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuplicatedCodeTests", "DuplicatedCodeTests\DuplicatedCodeTests.csproj", "{7CAB306C-E53D-4BA0-B598-1BA12B2EF185}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuplicatedCode", "DuplicateCode\DuplicatedCode.csproj", "{DE500549-6CFA-4FA1-9706-B7B791ECAB54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refactoring", "DuplicateCode\Refactoring.csproj", "{DE500549-6CFA-4FA1-9706-B7B791ECAB54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +24,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{7CAB306C-E53D-4BA0-B598-1BA12B2EF185} = {6F2992B8-AEB0-483A-BC6C-EAB2A7D3EA2B}
-		{DE500549-6CFA-4FA1-9706-B7B791ECAB54} = {6F2992B8-AEB0-483A-BC6C-EAB2A7D3EA2B}
 	EndGlobalSection
 EndGlobal

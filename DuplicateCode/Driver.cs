@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DuplicatedCode
+namespace Refactoring
 {
     public class Driver
     {
@@ -17,7 +17,7 @@ namespace DuplicatedCode
         public string State { get; set; }
         public string Zip { get; set; }
 
-        public Driver(DateTime dateOfBirth, int pointsOnLicense, string licenseNumber, DateTime licenseExpireDate)
+       public Driver(DateTime dateOfBirth, int pointsOnLicense, string licenseNumber, DateTime licenseExpireDate)
         {
             PointsOnLicense = pointsOnLicense;
             DateOfBirth = dateOfBirth;

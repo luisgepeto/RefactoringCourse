@@ -1,4 +1,4 @@
-﻿namespace DuplicatedCode
+﻿namespace Refactoring
 {
     public enum RiskFactor
     {

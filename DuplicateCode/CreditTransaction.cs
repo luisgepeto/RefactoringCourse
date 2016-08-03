@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DuplicatedCode
+namespace Refactoring
 {
     public class CreditTransaction : Transaction
     {

@@ -1,8 +1,8 @@
 ﻿using System;
-using DuplicatedCode;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Refactoring;
 
-namespace DuplicatedCodeTests
+namespace RefactoringTests
 {
     [TestClass]
     public class CarDriverTests
@@ -16,6 +16,17 @@ namespace DuplicatedCodeTests
             var carBrand = carDriver.GetCarBrand();
             //Assert
             Assert.AreEqual("Toyota", carBrand, "The car brand must be a toyota");
+        }
+
+        [TestMethod]
+        public void CarDriver_Drive_SomeCar_ReturnsString()
+        {
+            //Arrange
+            var carDriver = new CarDriver(DateTime.Now, 0, "LIC", DateTime.Now, "Toyota");
+            //Act
+            var driveOutput = carDriver.Drive();
+            //Assert
+            Assert.AreEqual("I am driving a car", driveOutput, "The vehicle driven must be a car");
         }
     }
 }
