@@ -24,6 +24,11 @@ namespace Refactoring
             return "I am driving a car";
         }
 
+        public override int GetNumberOfWheels()
+        {
+            return 4;
+        }
+
         //inappropirate intimacy
         public string VerifyOwnership()
         {

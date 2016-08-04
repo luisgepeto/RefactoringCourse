@@ -23,5 +23,7 @@
         {
             return Wheel.Stop();
         }
+
+        public abstract int GetNumberOfWheels();
     }
 }

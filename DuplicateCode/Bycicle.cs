@@ -13,5 +13,10 @@
         {
             return "I am driving a bike";
         }
+
+        public override int GetNumberOfWheels()
+        {
+            return 2;
+        }
     }
 }

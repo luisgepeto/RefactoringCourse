@@ -49,6 +49,7 @@
     <Compile Include="CreditTransaction.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="DebitTransaction.cs" />
+    <Compile Include="FortuneWheel.cs" />
     <Compile Include="InsuranceQuote.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="InvestmentTransaction.cs" />
