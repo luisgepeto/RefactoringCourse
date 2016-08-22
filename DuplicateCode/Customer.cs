@@ -4,7 +4,6 @@ namespace Refactoring
 {
     public class Customer
     {
-        //Data class - POCO
         public Customer()
         {
             PersonalAccounts = new List<Account>();

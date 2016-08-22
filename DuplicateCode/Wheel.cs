@@ -1,4 +1,5 @@
-﻿namespace Refactoring
+﻿using System;
+namespace Refactoring
 {
     public class Wheel
     {
@@ -7,15 +8,45 @@
             Tire = new Tire();
         }
         public Tire Tire { get; set; }
-        //middle man use message chaing
         public string Move()
         {
             return Tire.Move();
         }
-        //middle man use message chaing
         public string Stop()
         {
             return Tire.Stop();
+        }
+    }
+    public class Tire
+    {
+        public string Move()
+        {
+            return "I am a moving tire";
+        }
+        public string Stop()
+        {
+            return "I am a stopping tire";
+        }
+    }
+    public class FortuneWheel : Vehicle
+    {
+        public override string Drive()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual string Move()
+        {
+            return Wheel.Move();
+        }
+        public virtual string Stop()
+        {
+            return Wheel.Stop();
+        }
+
+        public override int GetNumberOfWheels()
+        {
+            return 1;
         }
     }
 }

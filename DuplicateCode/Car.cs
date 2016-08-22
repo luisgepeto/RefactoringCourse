@@ -18,7 +18,6 @@ namespace Refactoring
             Driver = driver;
         }
 
-        //Parallel Inheritance try adding a new driver and a new vehicle
         public override string Drive()
         {
             return "I am driving a car";
@@ -28,8 +27,6 @@ namespace Refactoring
         {
             return 4;
         }
-
-        //inappropirate intimacy
         public string VerifyOwnership()
         {
             var result = "This car has no owner";

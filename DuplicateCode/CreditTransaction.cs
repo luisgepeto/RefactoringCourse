@@ -1,23 +1,16 @@
 ﻿using System;
-
 namespace Refactoring
 {
     public class CreditTransaction : Transaction
     {
-        public CreditTransaction(bool isDebit, decimal amount) : base(isDebit, amount)
-        {
-        }
-        //Duplicated code - Pull Up Field
+        public CreditTransaction(bool isDebit, decimal amount) : base(isDebit, amount){}
         private string Recipient { get; set; }
         private string Sender { get; set; }
         public void SetRecipient(string recipient)
         {
             Recipient = recipient;
         }
-        public string GetRecipient()
-        {
-            return Recipient;
-        }
+        public string GetRecipient() { return Recipient; }
         public void SetSender(string sender)
         {
             Sender = sender;
@@ -26,18 +19,13 @@ namespace Refactoring
         {
             return Sender;
         }
-
         public string GetSummary()
         {
-            //Duplicated code - Form Template
             return String.Format("This is a credit transaction for ${0} from {1} to {2}", Amount, Sender, Recipient);
         }
-
         public decimal CalculateInterest(double rateOfInterest, int numberOfYears, string interestPeriod)
         {
-            //Duplicated code - Substitute Algorithm
             double numberOfPeriodsPerYear = 0;
-            //Switch Statements - Try to add case - Replace with enum and make extension method
             switch (interestPeriod)
             {
                 case "Day":
@@ -53,11 +41,7 @@ namespace Refactoring
                     numberOfPeriodsPerYear = 1;
                     break;
             }
-            return
-                Math.Round(
-                    (decimal)
-                        ((double) Amount*
-                         Math.Pow(1 + rateOfInterest/numberOfPeriodsPerYear, numberOfPeriodsPerYear*numberOfYears)), 2);
+            return Math.Round((decimal)((double) Amount*Math.Pow(1 + rateOfInterest/numberOfPeriodsPerYear, numberOfPeriodsPerYear*numberOfYears)), 2);
         }
     }
 }

@@ -7,7 +7,6 @@ namespace Refactoring
         public DebitTransaction(bool isDebit, decimal amount) : base(isDebit, amount)
         {
         }
-        //Duplicated code - Pull Up Field
         private string Recipient { get; set; }
         private string Sender { get; set; }
         public void SetRecipient(string recipient)
@@ -29,15 +28,12 @@ namespace Refactoring
 
         public string GetSummary()
         {
-            //Duplicated code - Form Template
             return String.Format("This is a debit transaction for ${0} from {1} to {2}", Amount, Sender, Recipient);
         }
 
         public decimal CalculateInterest(double rateOfInterest, int numberOfYears, string interestPeriod)
         {
-            //Duplicated code - Substitute Algorithm
             double numberOfPeriodsPerYear = 0;
-            //Switch Statements - Try to add case - Replace with enum and make extension method
             switch (interestPeriod)
             {
                 case "Day":

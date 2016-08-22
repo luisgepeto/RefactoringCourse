@@ -3,13 +3,10 @@
     public class InsuranceQuote
     {
         private Driver Driver { get; set; }
-
         public InsuranceQuote(Driver driver)
         {
             Driver = driver;
         }
-
-        //Feature Envy - Move Method
         public RiskFactor CalculateDriverRiskFactor()
         {
             if (Driver.GetPointsOnLicense() > 3 || Driver.GetAge() < 25)
@@ -20,7 +17,6 @@
 
             return RiskFactor.Low;
         }
-        //Feature Envy - Move Method
         public double CalculateInsurancePremium(double insuranceValue)
         {
             var riskFactor = CalculateDriverRiskFactor();
@@ -36,7 +32,12 @@
             }
             return insuranceValue;
         }
+    }
 
-
+    public enum RiskFactor
+    {
+        Low,
+        Moderate,
+        High
     }
 }

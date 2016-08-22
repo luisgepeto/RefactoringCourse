@@ -4,19 +4,15 @@ namespace Refactoring
 {
     public class Driver
     {
-        //Divergent change - Extract class - Can implement null object
-        private int PointsOnLicense { get; set; }
-        private string LicenseNumber { get; set; }
-        private DateTime LicenseExpireDate { get; set; }
-        private DateTime DateOfBirth { get; set; }
-        //Primitive Obsession 
-        //Divergent Change - Extract Class
-        public string AddressLine1 { get; set; }
-        public string AddressLine2 { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Zip { get; set; }
-
+       private int PointsOnLicense { get; set; }
+       private string LicenseNumber { get; set; }
+       private DateTime LicenseExpireDate { get; set; }
+       private DateTime DateOfBirth { get; set; }
+       public string AddressLine1 { get; set; }
+       public string AddressLine2 { get; set; }
+       public string City { get; set; }
+       public string State { get; set; }
+       public string Zip { get; set; }
        public Driver(DateTime dateOfBirth, int pointsOnLicense, string licenseNumber, DateTime licenseExpireDate)
         {
             PointsOnLicense = pointsOnLicense;
@@ -31,13 +27,10 @@ namespace Refactoring
 
         public bool IsLicenseValid()
         {
-            //Divergent change (Make Change) - Extract class
             return PointsOnLicense < 5;
         }
-
         public string GenerateLicenseReport()
         {
-            //Divergent change (Make Change) - Extract class
             return String.Format("Your license number is {0} and you have {1} points in your license. Your license expires on {2}", LicenseNumber,
                 PointsOnLicense, LicenseExpireDate.ToString("d"));
         }
@@ -52,8 +45,6 @@ namespace Refactoring
 
         public string FormattedAddress()
         {
-            //Long Method - Replace parameter with Query
-            //Primitive Obsession
             var formattedZip = Zip;
             if (Zip != null && Zip.Length > 5)
             {
