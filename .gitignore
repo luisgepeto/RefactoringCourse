@@ -1,0 +1,6 @@
+﻿/.vs
+/Refactoring/bin
+/Refactoring/obj
+/RefactoringTests/bin
+/RefactoringTests/obj
+*.suo

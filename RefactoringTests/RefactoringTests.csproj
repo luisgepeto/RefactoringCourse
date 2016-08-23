@@ -66,7 +66,7 @@
     <Compile Include="StatementTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DuplicateCode\Refactoring.csproj">
+    <ProjectReference Include="..\Refactoring\Refactoring.csproj">
       <Project>{DE500549-6CFA-4FA1-9706-B7B791ECAB54}</Project>
       <Name>Refactoring</Name>
     </ProjectReference>
