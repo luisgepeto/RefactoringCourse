@@ -1,5 +1,0 @@
-C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicateCode\bin\Debug\DuplicatedCode.dll
-C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicateCode\bin\Debug\DuplicatedCode.pdb
-C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicateCode\obj\Debug\DuplicatedCode.dll
-C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicateCode\obj\Debug\DuplicatedCode.pdb
-C:\Users\luisb\Documents\Personal\Libros\Programacion\Programming\Refactoring\Refactoring\DuplicateCode\obj\Debug\DuplicatedCode.csprojResolveAssemblyReference.cache
