@@ -80,7 +80,7 @@ namespace Refactoring
             }
             return true;
         }
-
+        
         public string SummaryCreditChargedMonthly(decimal totalAmount, string recipient, int numberOfMonths ,decimal maxCreditAmount, double rateOfInterest, int numberOfYears)
         {
             var baseMonthlyTotal = totalAmount/numberOfMonths;
@@ -89,7 +89,7 @@ namespace Refactoring
                 return "Your credit transaction was initially rejected because you reached your max balance";
             var nextCreditTransactionValue = new CreditTransaction(false, baseMonthlyTotal).CalculateInterest(rateOfInterest, numberOfYears, "Month");
             Balance += nextCreditTransactionValue;
-            if (!TryMakeCreditTransaction(nextCreditTransactionValue,baseMonthlyTotal, recipient, maxCreditAmount))
+            if (!TryMakeCreditTransaction(nextCreditTransactionValue,baseMonthlyTotal, recipient, maxCreditAmount)) 
                 return "Your credit transaction was completely rejected because you reached your max balance";
             return "Your transaction was accepted";
         }
@@ -101,5 +101,13 @@ namespace Refactoring
         {
             return LastTransactionDate;
         }
+    }
+
+    internal class MonthlyTransaction
+    {
+        public decimal TransactionValue { get; set; }
+        public decimal BaseMonthlyTotal { get; set; }
+        public decimal MaxCreditAmount { get; set; }
+
     }
 }
