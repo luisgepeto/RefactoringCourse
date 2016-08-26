@@ -42,7 +42,7 @@ namespace Refactoring
             if (DateOfBirth > today.AddYears(-age)) age--;
             return age;
         }
-
+        //Long Method
         public string FormattedAddress()
         {
             var formattedZip = Zip;

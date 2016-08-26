@@ -65,6 +65,7 @@ namespace Refactoring
             TransactionList.Add(debitTransaction);
             LastTransactionDate = DateTime.Now;
         }
+        //Long Method
         public string SummaryCreditChargedMonthly(decimal totalAmount, string recipient, int numberOfMonths ,decimal maxCreditAmount, double rateOfInterest, int numberOfYears)
         {
             var baseMonthlyTotal = totalAmount/numberOfMonths;
