@@ -90,7 +90,7 @@ namespace Refactoring
             var nextCreditTransactionValue = new CreditTransaction(false, baseMonthlyTotal).CalculateInterest(rateOfInterest, numberOfYears, "Month");
             Balance += nextCreditTransactionValue;
             if (!TryMakeCreditTransaction(nextCreditTransactionValue,baseMonthlyTotal, recipient, maxCreditAmount))
-                return "Your credit transaction was initially rejected because you reached your max balance";
+                return "Your credit transaction was completely rejected because you reached your max balance";
             return "Your transaction was accepted";
         }
         public decimal GetBalance()
