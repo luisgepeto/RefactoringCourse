@@ -89,16 +89,8 @@ namespace Refactoring
                 return "Your credit transaction was initially rejected because you reached your max balance";
             var nextCreditTransactionValue = new CreditTransaction(false, baseMonthlyTotal).CalculateInterest(rateOfInterest, numberOfYears, "Month");
             Balance += nextCreditTransactionValue;
-            var nextCreditTransaction = new CreditTransaction(false, nextCreditTransactionValue);
-            nextCreditTransaction.SetRecipient(recipient);
-            nextCreditTransaction.SetSender(AccountHolderName);
-            TransactionList.Add(nextCreditTransaction);
-            if (Balance > maxCreditAmount)
-            {
-                Balance -= baseMonthlyTotal;
-                TransactionList.RemoveAt(TransactionList.Count - 1);
-                return "Your credit transaction was completely rejected because you reached your max balance";
-            }
+            if (!TryMakeCreditTransaction(nextCreditTransactionValue, recipient, maxCreditAmount))
+                return "Your credit transaction was initially rejected because you reached your max balance";
             return "Your transaction was accepted";
         }
         public decimal GetBalance()
