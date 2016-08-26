@@ -98,6 +98,12 @@ namespace Refactoring
                 return "Your credit transaction was completely rejected because you reached your max balance";
             return "Your transaction was accepted";
         }
+
+        private decimal GetBaseMonthlyTotal(decimal totalAmount, decimal numberOfMonths)
+        {
+            return totalAmount/numberOfMonths;
+        }
+
         public decimal GetBalance()
         {
             return Balance;
