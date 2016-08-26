@@ -65,11 +65,9 @@ namespace Refactoring
             TransactionList.Add(debitTransaction);
             LastTransactionDate = DateTime.Now;
         }
-        //Long Method
-        public string SummaryCreditChargedMonthly(decimal totalAmount, string recipient, int numberOfMonths ,decimal maxCreditAmount, double rateOfInterest, int numberOfYears)
+
+        private bool TryMakeCreditTransaction(decimal baseMonthlyTotal, string recipient, decimal maxCreditAmount)
         {
-            var baseMonthlyTotal = totalAmount/numberOfMonths;
-            Balance += baseMonthlyTotal;
             var creditTransaction = new CreditTransaction(false, baseMonthlyTotal);
             creditTransaction.SetRecipient(recipient);
             creditTransaction.SetSender(AccountHolderName);
@@ -77,9 +75,18 @@ namespace Refactoring
             if (Balance > maxCreditAmount)
             {
                 Balance -= baseMonthlyTotal;
-                TransactionList.RemoveAt(TransactionList.Count-1);
-                return "Your credit transaction was initially rejected because you reached your max balance";
+                TransactionList.RemoveAt(TransactionList.Count - 1);
+                return false;
             }
+            return true;
+        }
+
+        public string SummaryCreditChargedMonthly(decimal totalAmount, string recipient, int numberOfMonths ,decimal maxCreditAmount, double rateOfInterest, int numberOfYears)
+        {
+            var baseMonthlyTotal = totalAmount/numberOfMonths;
+            Balance += baseMonthlyTotal;
+            if (!TryMakeCreditTransaction(baseMonthlyTotal, recipient, maxCreditAmount))
+                return "Your credit transaction was initially rejected because you reached your max balance";
             var nextCreditTransactionValue = new CreditTransaction(false, baseMonthlyTotal).CalculateInterest(rateOfInterest, numberOfYears, "Month");
             Balance += nextCreditTransactionValue;
             var nextCreditTransaction = new CreditTransaction(false, nextCreditTransactionValue);
