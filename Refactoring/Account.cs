@@ -92,13 +92,18 @@ namespace Refactoring
             Balance += monthlyTransaction.BaseMonthlyTotal;
             if (!TryMakeCreditTransaction(monthlyTransaction, recipient))
                 return "Your credit transaction was initially rejected because you reached your max balance";
-            monthlyTransaction.TransactionValue = new CreditTransaction(false, monthlyTransaction.BaseMonthlyTotal).CalculateInterest(rateOfInterest, numberOfYears, "Month");
+            monthlyTransaction.TransactionValue = GetNextTransactionValue(rateOfInterest, numberOfYears, monthlyTransaction);
             Balance += monthlyTransaction.TransactionValue;
             if (!TryMakeCreditTransaction(monthlyTransaction, recipient)) 
                 return "Your credit transaction was completely rejected because you reached your max balance";
             return "Your transaction was accepted";
         }
 
+        private decimal GetNextTransactionValue(double rateOfInterest, int numberOfYears, MonthlyTransaction monthlyTransaction)
+        {
+            return new CreditTransaction(false, monthlyTransaction.BaseMonthlyTotal).CalculateInterest(rateOfInterest, numberOfYears, "Month");
+        }
+        
         private decimal GetBaseMonthlyTotal(decimal totalAmount, decimal numberOfMonths)
         {
             return totalAmount/numberOfMonths;
