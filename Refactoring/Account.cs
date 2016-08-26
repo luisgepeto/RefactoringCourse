@@ -66,9 +66,9 @@ namespace Refactoring
             LastTransactionDate = DateTime.Now;
         }
 
-        private bool TryMakeCreditTransaction(decimal baseMonthlyTotal, string recipient, decimal maxCreditAmount)
+        private bool TryMakeCreditTransaction(decimal transactionValue, decimal baseMonthlyTotal, string recipient, decimal maxCreditAmount)
         {
-            var creditTransaction = new CreditTransaction(false, baseMonthlyTotal);
+            var creditTransaction = new CreditTransaction(false, transactionValue);
             creditTransaction.SetRecipient(recipient);
             creditTransaction.SetSender(AccountHolderName);
             TransactionList.Add(creditTransaction);
@@ -85,11 +85,11 @@ namespace Refactoring
         {
             var baseMonthlyTotal = totalAmount/numberOfMonths;
             Balance += baseMonthlyTotal;
-            if (!TryMakeCreditTransaction(baseMonthlyTotal, recipient, maxCreditAmount))
+            if (!TryMakeCreditTransaction(baseMonthlyTotal, baseMonthlyTotal, recipient, maxCreditAmount))
                 return "Your credit transaction was initially rejected because you reached your max balance";
             var nextCreditTransactionValue = new CreditTransaction(false, baseMonthlyTotal).CalculateInterest(rateOfInterest, numberOfYears, "Month");
             Balance += nextCreditTransactionValue;
-            if (!TryMakeCreditTransaction(nextCreditTransactionValue, recipient, maxCreditAmount))
+            if (!TryMakeCreditTransaction(nextCreditTransactionValue,baseMonthlyTotal, recipient, maxCreditAmount))
                 return "Your credit transaction was initially rejected because you reached your max balance";
             return "Your transaction was accepted";
         }
