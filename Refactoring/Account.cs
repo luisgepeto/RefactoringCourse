@@ -66,15 +66,15 @@ namespace Refactoring
             LastTransactionDate = DateTime.Now;
         }
 
-        private bool TryMakeCreditTransaction(decimal transactionValue, decimal baseMonthlyTotal, string recipient, decimal maxCreditAmount)
+        private bool TryMakeCreditTransaction(MonthlyTransaction monthlyTransaction, string recipient)
         {
-            var creditTransaction = new CreditTransaction(false, transactionValue);
+            var creditTransaction = new CreditTransaction(false, monthlyTransaction.TransactionValue);
             creditTransaction.SetRecipient(recipient);
             creditTransaction.SetSender(AccountHolderName);
             TransactionList.Add(creditTransaction);
-            if (Balance > maxCreditAmount)
+            if (Balance > monthlyTransaction.MaxCreditAmount)
             {
-                Balance -= baseMonthlyTotal;
+                Balance -= monthlyTransaction.BaseMonthlyTotal;
                 TransactionList.RemoveAt(TransactionList.Count - 1);
                 return false;
             }
@@ -90,11 +90,11 @@ namespace Refactoring
                 MaxCreditAmount = maxCreditAmount
             };
             Balance += monthlyTransaction.BaseMonthlyTotal;
-            if (!TryMakeCreditTransaction(monthlyTransaction.TransactionValue, monthlyTransaction.BaseMonthlyTotal, recipient, monthlyTransaction.MaxCreditAmount))
+            if (!TryMakeCreditTransaction(monthlyTransaction, recipient))
                 return "Your credit transaction was initially rejected because you reached your max balance";
             monthlyTransaction.TransactionValue = new CreditTransaction(false, monthlyTransaction.BaseMonthlyTotal).CalculateInterest(rateOfInterest, numberOfYears, "Month");
             Balance += monthlyTransaction.TransactionValue;
-            if (!TryMakeCreditTransaction(monthlyTransaction.TransactionValue, monthlyTransaction.BaseMonthlyTotal, recipient, monthlyTransaction.MaxCreditAmount)) 
+            if (!TryMakeCreditTransaction(monthlyTransaction, recipient)) 
                 return "Your credit transaction was completely rejected because you reached your max balance";
             return "Your transaction was accepted";
         }
