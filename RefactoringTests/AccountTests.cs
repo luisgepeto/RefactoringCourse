@@ -8,10 +8,12 @@ namespace RefactoringTests
     public class AccountTests
     {
         private Account Account { get; set; }
+        private CreditAccount CreditAccount { get; set; }
         [TestInitialize]
         public void TestInitialize()
         {
             Account = new Account("My Account Holder Name", 9999);
+            CreditAccount = new CreditAccount("My Account Holder Name", 9999);
         }
 
         [TestMethod]
@@ -129,25 +131,25 @@ namespace RefactoringTests
         }
 
         [TestMethod]
-        public void Account_GetNextBillingCycleStart_OneDayCycle_IsTomorrow()
+        public void CreditAccount_GetNextBillingCycleStart_OneDayCycle_IsTomorrow()
         {
             //Arrange
-            Account.BillingCycleDays = 1;
-            Account.BillingCycleStartDate = new DateTime(DateTime.Now.Year, 1, 1);
+            CreditAccount.BillingCycleDays = 1;
+            CreditAccount.BillingCycleStartDate = new DateTime(DateTime.Now.Year, 1, 1);
             //Act
-            var nextCycleDate = Account.GetNextBillingCycleStart();
+            var nextCycleDate = CreditAccount.GetNextBillingCycleStart();
             //Assert
             Assert.AreEqual(DateTime.Now.AddDays(1).Date, nextCycleDate, "the next cycle start should be today");
         }
 
         [TestMethod]
-        public void Account_GetNextBillingCycleStart_30DayCycle_Matches()
+        public void CreditAccount_GetNextBillingCycleStart_30DayCycle_Matches()
         {
             //Arrange
-            Account.BillingCycleDays = 30;
-            Account.BillingCycleStartDate = new DateTime(DateTime.Now.Year, 1, 1);
+            CreditAccount.BillingCycleDays = 30;
+            CreditAccount.BillingCycleStartDate = new DateTime(DateTime.Now.Year, 1, 1);
             //Act
-            var nextCycleDate = Account.GetNextBillingCycleStart();
+            var nextCycleDate = CreditAccount.GetNextBillingCycleStart();
             //Assert
             var expectedDate = new DateTime(DateTime.Now.Year, 1, 1).Date;
             while (expectedDate <= DateTime.Now.Date)
