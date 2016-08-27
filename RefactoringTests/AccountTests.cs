@@ -101,11 +101,11 @@ namespace RefactoringTests
         }
 
         [TestMethod]
-        public void Account_SummaryCreditChargedMonthly_150Dollars3PercentRate10YearsMonthPeriod10MaxAmount_IsRejected()
+        public void CreditAccount_SummaryCreditChargedMonthly_150Dollars3PercentRate10YearsMonthPeriod10MaxAmount_IsRejected()
         {
             //Arrange
             //Act
-            var result = Account.SummaryCreditChargedMonthly(150, "My Recipient", 5, 10, 0.03, 10);
+            var result = CreditAccount.SummaryCreditChargedMonthly(150, "My Recipient", 5, 10, 0.03, 10);
             //Assert
             Assert.AreEqual("Your credit transaction was initially rejected because you reached your max balance", result, "The messages should match");
         }
@@ -115,7 +115,7 @@ namespace RefactoringTests
         {
             //Arrange
             //Act
-            var result = Account.SummaryCreditChargedMonthly(150, "My Recipient", 5, 50, 0.03, 10);
+            var result = CreditAccount.SummaryCreditChargedMonthly(150, "My Recipient", 5, 50, 0.03, 10);
             //Assert
             Assert.AreEqual("Your credit transaction was completely rejected because you reached your max balance", result, "The messages should match");
         }
@@ -125,7 +125,7 @@ namespace RefactoringTests
         {
             //Arrange
             //Act
-            var result = Account.SummaryCreditChargedMonthly(150, "My Recipient", 5, 100, 0.03, 10);
+            var result = CreditAccount.SummaryCreditChargedMonthly(150, "My Recipient", 5, 100, 0.03, 10);
             //Assert
             Assert.AreEqual("Your transaction was accepted", result, "The messages should match");
         }
