@@ -42,25 +42,7 @@ namespace Refactoring
 
         public string FormattedAddress()
         {
-            var formattedZip = Address.Zip;
-            if (Address.Zip != null && Address.Zip.Length > 5)
-            {
-                formattedZip= Address.Zip.Substring(0, 5);
-            }
-            var fullAddress = String.Format("{0} {1} {2} {3} {4}", Address.AddressLine1, Address.AddressLine2, Address.City, Address.State, formattedZip).Trim();
-            var outAddress = String.Empty;
-            if (String.IsNullOrWhiteSpace(fullAddress)) return outAddress;
-            outAddress = Address.AddressLine1;
-            if (!String.IsNullOrWhiteSpace(Address.AddressLine2)) outAddress += "\n" + Address.AddressLine2;
-            if (!String.IsNullOrWhiteSpace(Address.City) || !String.IsNullOrWhiteSpace(Address.State))
-            {
-                outAddress += "\n";
-                if (!String.IsNullOrWhiteSpace(Address.City)) outAddress += Address.City;
-                if (!String.IsNullOrWhiteSpace(Address.City) && !String.IsNullOrWhiteSpace(Address.State)) outAddress += ", ";
-                if (!String.IsNullOrWhiteSpace(Address.State)) outAddress += Address.State;
-            }
-            if (!String.IsNullOrWhiteSpace(formattedZip)) outAddress += "\n" + formattedZip;
-            return outAddress;
+            return Address.FormattedAddress();
         }
     }
 }
