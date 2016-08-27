@@ -26,10 +26,20 @@ namespace Refactoring
 
         public void Credit(decimal amount, string recipient)
         {
-            Balance += amount;
+            AddBalance(amount);
             var creditTransaction = new CreditTransaction(false, amount);
             creditTransaction.SetRecipient(recipient);
             creditTransaction.SetSender(AccountHolderName);
+            PerformTransaction(creditTransaction);
+        }
+
+        private void AddBalance(decimal amount)
+        {
+            Balance += amount;
+        }
+
+        private void PerformTransaction(Transaction creditTransaction)
+        {
             TransactionList.Add(creditTransaction);
             LastTransactionDate = DateTime.Now;
         }
