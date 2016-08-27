@@ -8,13 +8,14 @@ namespace Refactoring
         {
         }
 
-        public void Debit(decimal amount, string recipient)
+        public Transaction Debit(decimal amount, string recipient)
         {
             AddBalance(-amount);
             var debitTransaction = new DebitTransaction(true, amount);
             debitTransaction.SetRecipient(recipient);
             debitTransaction.SetSender(AccountHolderName);
             PerformTransaction(debitTransaction);
+            return debitTransaction;
         }
     }
 }

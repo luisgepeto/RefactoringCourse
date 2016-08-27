@@ -24,13 +24,14 @@ namespace Refactoring
             return iteratingDate;
         }
 
-        public void Credit(decimal amount, string recipient)
+        public Transaction Credit(decimal amount, string recipient)
         {
             AddBalance(amount);
             var creditTransaction = new CreditTransaction(false, amount);
             creditTransaction.SetRecipient(recipient);
             creditTransaction.SetSender(AccountHolderName);
             PerformTransaction(creditTransaction);
+            return creditTransaction;
         }
 
         public string SummaryCreditChargedMonthly(decimal totalAmount, string recipient, int numberOfMonths, decimal maxCreditAmount, double rateOfInterest, int numberOfYears)

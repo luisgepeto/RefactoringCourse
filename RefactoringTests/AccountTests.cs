@@ -8,11 +8,13 @@ namespace RefactoringTests
     public class AccountTests
     {
         private Account Account { get; set; }
+        private MixedAccount MixedAccount { get; set; }
         private DebitAccount DebitAccount { get; set; }
         private CreditAccount CreditAccount { get; set; }
         [TestInitialize]
         public void TestInitialize()
         {
+            MixedAccount = new MixedAccount("My Account Holder Name", 9999);
             Account = new Account("My Account Holder Name", 9999);
             DebitAccount = new DebitAccount("My Account Holder Name", 9999);
             CreditAccount = new CreditAccount("My Account Holder Name", 9999);
@@ -29,12 +31,12 @@ namespace RefactoringTests
         }
 
         [TestMethod]
-        public void Account_GetLastTransaction_PreviousCreditTransaction_ReturnsSame()
+        public void CreditAccount_GetLastTransaction_PreviousCreditTransaction_ReturnsSame()
         {
             //Arrange
             CreditAccount.Credit(100, "Some Recipient");
             //Act
-            var lastTransaction = Account.GetLastTransaction();
+            var lastTransaction = CreditAccount.GetLastTransaction();
             //Assert
             Assert.IsNotNull(lastTransaction, "The last transaction should exist");
             Assert.AreEqual(100, lastTransaction.Amount, "The last transaction should have an amount of 100");
@@ -47,7 +49,7 @@ namespace RefactoringTests
             //Arrange
             DebitAccount.Debit(50, "Some Recipient");
             //Act
-            var lastTransaction = Account.GetLastTransaction();
+            var lastTransaction = DebitAccount.GetLastTransaction();
             //Assert
             Assert.IsNotNull(lastTransaction, "The last transaction should exist");
             Assert.AreEqual(50, lastTransaction.Amount, "The last transaction should have an amount of 50");
@@ -67,37 +69,37 @@ namespace RefactoringTests
 
 
         [TestMethod]
-        public void Account_GetLastTransactionDate_AfterTransaction_ReturnsTodaysDate()
+        public void DebitAccount_GetLastTransactionDate_AfterTransaction_ReturnsTodaysDate()
         {
             //Arrange
             DebitAccount.Debit(10, "Some Recipient");
             //Act
-            var lastTransactionDate = Account.GetLastTransactionDate();
+            var lastTransactionDate = DebitAccount.GetLastTransactionDate();
             //Assert
             Assert.IsNotNull(lastTransactionDate, "The last transaction date should exist");
             Assert.AreEqual(DateTime.Now.Date, lastTransactionDate.Value.Date, "The last transaction should have an amount of 50");
         }
 
         [TestMethod]
-        public void Account_GetBalance_AfterBiggerCreditTransaction_IsPositive()
+        public void MixedAccount_GetBalance_AfterBiggerCreditTransaction_IsPositive()
         {
             //Arrange
-            Account.Credit(100, "Some Recipient");
-            Account.Debit(50, "Some Recipient");
+            MixedAccount.Credit(100, "Some Recipient");
+            MixedAccount.Debit(50, "Some Recipient");
             //Act
-            var balance = Account.GetBalance();
+            var balance = MixedAccount.GetBalance();
             //Assert
             Assert.AreEqual(50, balance, "The balance should equal +50");
         }
 
         [TestMethod]
-        public void Account_GetBalance_AfterBiggerDebitTransaction_IsNegative()
+        public void MixedAccount_GetBalance_AfterBiggerDebitTransaction_IsNegative()
         {
             //Arrange
-            Account.Debit(150, "Some Recipient");
-            Account.Credit(50, "Some Recipient");
+            MixedAccount.Debit(150, "Some Recipient");
+            MixedAccount.Credit(50, "Some Recipient");
             //Act
-            var balance = Account.GetBalance();
+            var balance = MixedAccount.GetBalance();
             //Assert
             Assert.AreEqual(-100, balance, "The balance should equal -100");
         }
@@ -113,7 +115,7 @@ namespace RefactoringTests
         }
 
         [TestMethod]
-        public void Account_SummaryCreditChargedMonthly_150Dollars3PercentRate10YearsMonthPeriod50MaxAmount_IsRejected()
+        public void CreditAccount_SummaryCreditChargedMonthly_150Dollars3PercentRate10YearsMonthPeriod50MaxAmount_IsRejected()
         {
             //Arrange
             //Act
@@ -123,7 +125,7 @@ namespace RefactoringTests
         }
 
         [TestMethod]
-        public void Account_SummaryCreditChargedMonthly_150Dollars3PercentRate10YearsMonthPeriod100MaxAmount_IsAccepted()
+        public void CreditAccount_SummaryCreditChargedMonthly_150Dollars3PercentRate10YearsMonthPeriod100MaxAmount_IsAccepted()
         {
             //Arrange
             //Act

@@ -7,12 +7,14 @@ namespace RefactoringTests
     public class StatementTests
     {
         private Account Account { get; set; }
+        private MixedAccount MixedAccount { get; set; }
         private Statement Statement { get; set; }
         [TestInitialize]
         public void Setup()
         {
+            MixedAccount = new MixedAccount("Account Holder Name", 999);
             Account = new Account("Account Holder Name", 999);
-            Statement = new Statement(Account);
+            Statement = new Statement(MixedAccount);
         }
 
         [TestMethod]
@@ -30,10 +32,10 @@ namespace RefactoringTests
         public void Statement_GetTotalCreditBalance_AfterTransactions_Returns100()
         {
             //Arrange
-            Account.Credit(50, "Some Recipient 1");
-            Account.Debit(10, "Some Recipient 2");
-            Account.Credit(50, "Some Recipient 3");
-            Account.Debit(40, "Some Recipient 4");
+            MixedAccount.Credit(50, "Some Recipient 1");
+            MixedAccount.Debit(10, "Some Recipient 2");
+            MixedAccount.Credit(50, "Some Recipient 3");
+            MixedAccount.Debit(40, "Some Recipient 4");
             //Act
             var totalCreditBalance = Statement.GetTotalCreditBalance();
             //Assert
@@ -56,10 +58,10 @@ namespace RefactoringTests
         public void Statement_GetTotalDebitBalance_AfterTransactions_Returns50()
         {
             //Arrange
-            Account.Credit(50, "Some Recipient 1");
-            Account.Debit(10, "Some Recipient 2");
-            Account.Credit(50, "Some Recipient 3");
-            Account.Debit(40, "Some Recipient 4");
+            MixedAccount.Credit(50, "Some Recipient 1");
+            MixedAccount.Debit(10, "Some Recipient 2");
+            MixedAccount.Credit(50, "Some Recipient 3");
+            MixedAccount.Debit(40, "Some Recipient 4");
             //Act
             var totalDebitBalance = Statement.GetTotalDebitBalance();
             //Assert
