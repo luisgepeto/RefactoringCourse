@@ -9,10 +9,6 @@ namespace Refactoring
        private DateTime LicenseExpireDate { get; set; }
        private DateTime DateOfBirth { get; set; }
        public Address Address { get; set; }
-       public string AddressLine2 { get; set; }
-       public string City { get; set; }
-       public string State { get; set; }
-       public string Zip { get; set; }
        public Driver(DateTime dateOfBirth, int pointsOnLicense, string licenseNumber, DateTime licenseExpireDate)
         {
             PointsOnLicense = pointsOnLicense;
@@ -46,22 +42,22 @@ namespace Refactoring
 
         public string FormattedAddress()
         {
-            var formattedZip = Zip;
-            if (Zip != null && Zip.Length > 5)
+            var formattedZip = Address.Zip;
+            if (Address.Zip != null && Address.Zip.Length > 5)
             {
-                formattedZip= Zip.Substring(0, 5);
+                formattedZip= Address.Zip.Substring(0, 5);
             }
-            var fullAddress = String.Format("{0} {1} {2} {3} {4}", Address.AddressLine1, AddressLine2, City, State, formattedZip).Trim();
+            var fullAddress = String.Format("{0} {1} {2} {3} {4}", Address.AddressLine1, Address.AddressLine2, Address.City, Address.State, formattedZip).Trim();
             var outAddress = String.Empty;
             if (String.IsNullOrWhiteSpace(fullAddress)) return outAddress;
             outAddress = Address.AddressLine1;
-            if (!String.IsNullOrWhiteSpace(AddressLine2)) outAddress += "\n" + AddressLine2;
-            if (!String.IsNullOrWhiteSpace(City) || !String.IsNullOrWhiteSpace(State))
+            if (!String.IsNullOrWhiteSpace(Address.AddressLine2)) outAddress += "\n" + Address.AddressLine2;
+            if (!String.IsNullOrWhiteSpace(Address.City) || !String.IsNullOrWhiteSpace(Address.State))
             {
                 outAddress += "\n";
-                if (!String.IsNullOrWhiteSpace(City)) outAddress += City;
-                if (!String.IsNullOrWhiteSpace(City) && !String.IsNullOrWhiteSpace(State)) outAddress += ", ";
-                if (!String.IsNullOrWhiteSpace(State)) outAddress += State;
+                if (!String.IsNullOrWhiteSpace(Address.City)) outAddress += Address.City;
+                if (!String.IsNullOrWhiteSpace(Address.City) && !String.IsNullOrWhiteSpace(Address.State)) outAddress += ", ";
+                if (!String.IsNullOrWhiteSpace(Address.State)) outAddress += Address.State;
             }
             if (!String.IsNullOrWhiteSpace(formattedZip)) outAddress += "\n" + formattedZip;
             return outAddress;
