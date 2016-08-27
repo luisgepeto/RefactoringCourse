@@ -33,7 +33,7 @@ namespace Refactoring
             PerformTransaction(creditTransaction);
             return creditTransaction;
         }
-        public string SummaryCreditChargedMonthly(decimal totalAmount, string recipient, int numberOfMonths, decimal maxCreditAmount, double rateOfInterest, int numberOfYears, InterestRate interestRate)
+        public string SummaryCreditChargedMonthly(string recipient, decimal maxCreditAmount, InterestRate interestRate)
         {
             var monthlyTransaction = new MonthlyTransaction()
             {

@@ -115,7 +115,7 @@ namespace RefactoringTests
                 TotalAmount = 150
             };
             //Act
-            var result = CreditAccount.SummaryCreditChargedMonthly(150, "My Recipient", 5, 10, 0.03, 10, interestRate);
+            var result = CreditAccount.SummaryCreditChargedMonthly("My Recipient", 10, interestRate);
             //Assert
             Assert.AreEqual("Your credit transaction was initially rejected because you reached your max balance", result, "The messages should match");
         }
@@ -132,7 +132,7 @@ namespace RefactoringTests
                 TotalAmount = 150
             };
             //Act
-            var result = CreditAccount.SummaryCreditChargedMonthly(150, "My Recipient", 5, 50, 0.03, 10, interestRate);
+            var result = CreditAccount.SummaryCreditChargedMonthly("My Recipient", 50, interestRate);
             //Assert
             Assert.AreEqual("Your credit transaction was completely rejected because you reached your max balance", result, "The messages should match");
         }
@@ -149,7 +149,7 @@ namespace RefactoringTests
                 TotalAmount = 150
             };
             //Act
-            var result = CreditAccount.SummaryCreditChargedMonthly(150, "My Recipient", 5, 100, 0.03, 10, interestRate);
+            var result = CreditAccount.SummaryCreditChargedMonthly( "My Recipient", 100, interestRate);
             //Assert
             Assert.AreEqual("Your transaction was accepted", result, "The messages should match");
         }
