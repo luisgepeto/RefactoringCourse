@@ -8,7 +8,7 @@ namespace Refactoring
        private string LicenseNumber { get; set; }
        private DateTime LicenseExpireDate { get; set; }
        private DateTime DateOfBirth { get; set; }
-        //primitive obsession
+       public Address Address { get; set; }
        public string AddressLine1 { get; set; }
        public string AddressLine2 { get; set; }
        public string City { get; set; }
