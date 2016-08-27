@@ -33,13 +33,6 @@ namespace Refactoring
             PerformTransaction(creditTransaction);
         }
 
-
-        private void PerformTransaction(Transaction creditTransaction)
-        {
-            TransactionList.Add(creditTransaction);
-            LastTransactionDate = DateTime.Now;
-        }
-
         public string SummaryCreditChargedMonthly(decimal totalAmount, string recipient, int numberOfMonths, decimal maxCreditAmount, double rateOfInterest, int numberOfYears)
         {
             var monthlyTransaction = new MonthlyTransaction()

@@ -44,5 +44,11 @@ namespace Refactoring
         {
             Balance += amount;
         }
+
+        protected void PerformTransaction(Transaction creditTransaction)
+        {
+            TransactionList.Add(creditTransaction);
+            LastTransactionDate = DateTime.Now;
+        }
     }
 }

@@ -16,11 +16,5 @@ namespace Refactoring
             debitTransaction.SetSender(AccountHolderName);
             PerformTransaction(debitTransaction);
         }
-
-        private void PerformTransaction(Transaction creditTransaction)
-        {
-            TransactionList.Add(creditTransaction);
-            LastTransactionDate = DateTime.Now;
-        }
     }
 }
