@@ -69,11 +69,7 @@ namespace Refactoring
         {
             return new CreditTransaction(false, monthlyTransaction.BaseMonthlyTotal).CalculateInterest(rateOfInterest, numberOfYears, "Month");
         }
-
-        private decimal GetBaseMonthlyTotal(decimal totalAmount, decimal numberOfMonths)
-        {
-            return totalAmount / numberOfMonths;
-        }
+        
     }
     internal class MonthlyTransaction
     {
