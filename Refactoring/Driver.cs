@@ -39,7 +39,7 @@ namespace Refactoring
             if (DateOfBirth > today.AddYears(-age)) age--;
             return age;
         }
-
+        
         public string FormattedAddress()
         {
             return Address.FormattedAddress();
