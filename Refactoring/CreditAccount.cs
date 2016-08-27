@@ -37,8 +37,8 @@ namespace Refactoring
         {
             var monthlyTransaction = new MonthlyTransaction()
             {
-                BaseMonthlyTotal = GetBaseMonthlyTotal(interestRate.TotalAmount, interestRate.NumberOfMonths),
-                TransactionValue = GetBaseMonthlyTotal(interestRate.TotalAmount, interestRate.NumberOfMonths),
+                BaseMonthlyTotal = interestRate.GetBaseMonthlyTotal(),
+                TransactionValue = interestRate.GetBaseMonthlyTotal(),
                 MaxCreditAmount = maxCreditAmount
             };
             Balance += monthlyTransaction.BaseMonthlyTotal;
