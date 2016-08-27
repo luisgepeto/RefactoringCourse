@@ -46,9 +46,13 @@ namespace Refactoring
         public string FormattedAddress()
         {
             var formattedZip = GetFormattedZip();
-            var outAddress = String.Empty;
-            if (IsFullAddressEmpty(formattedZip)) return outAddress;
-            outAddress = AddressLine1;
+            if (IsFullAddressEmpty(formattedZip)) return String.Empty;
+            return FormatAddress(formattedZip);
+        }
+
+        private string FormatAddress(string formattedZip)
+        {
+            var outAddress = AddressLine1;
             if (!String.IsNullOrWhiteSpace(AddressLine2)) outAddress += "\n" + AddressLine2;
             if (!String.IsNullOrWhiteSpace(City) || !String.IsNullOrWhiteSpace(State))
             {
