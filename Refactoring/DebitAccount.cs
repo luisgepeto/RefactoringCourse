@@ -17,11 +17,6 @@ namespace Refactoring
             PerformTransaction(debitTransaction);
         }
 
-        private void AddBalance(decimal amount)
-        {
-            Balance += amount;
-        }
-
         private void PerformTransaction(Transaction creditTransaction)
         {
             TransactionList.Add(creditTransaction);

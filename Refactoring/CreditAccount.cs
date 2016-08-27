@@ -33,10 +33,6 @@ namespace Refactoring
             PerformTransaction(creditTransaction);
         }
 
-        private void AddBalance(decimal amount)
-        {
-            Balance += amount;
-        }
 
         private void PerformTransaction(Transaction creditTransaction)
         {

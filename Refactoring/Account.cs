@@ -4,7 +4,6 @@ using System.Linq;
 
 namespace Refactoring
 {
-    //large class
     public class Account
     {
         public Account(string accountHolderName, int accountNumber)
@@ -18,7 +17,7 @@ namespace Refactoring
         protected List<Transaction> TransactionList { get; set; }
         protected decimal Balance { get; set; }
         protected DateTime? LastTransactionDate { get; set; }
-
+        
         public Transaction GetLastTransaction()
         {
             return TransactionList.LastOrDefault();
@@ -41,4 +40,9 @@ namespace Refactoring
         {
             return LastTransactionDate;
         }
-    }}
+        protected void AddBalance(decimal amount)
+        {
+            Balance += amount;
+        }
+    }
+}
