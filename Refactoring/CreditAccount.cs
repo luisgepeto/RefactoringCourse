@@ -37,19 +37,20 @@ namespace Refactoring
         {
             var monthlyTransaction = new MonthlyTransaction()
             {
-                BaseMonthlyTotal = GetBaseMonthlyTotal(totalAmount, numberOfMonths),
-                TransactionValue = GetBaseMonthlyTotal(totalAmount, numberOfMonths),
+                BaseMonthlyTotal = GetBaseMonthlyTotal(interestRate.TotalAmount, interestRate.NumberOfMonths),
+                TransactionValue = GetBaseMonthlyTotal(interestRate.TotalAmount, interestRate.NumberOfMonths),
                 MaxCreditAmount = maxCreditAmount
             };
             Balance += monthlyTransaction.BaseMonthlyTotal;
             if (!TryMakeCreditTransaction(monthlyTransaction, recipient))
                 return "Your credit transaction was initially rejected because you reached your max balance";
-            monthlyTransaction.TransactionValue = GetNextTransactionValue(rateOfInterest, numberOfYears, monthlyTransaction);
+            monthlyTransaction.TransactionValue = GetNextTransactionValue(interestRate.RateOfInterest, interestRate.NumberOfYears, monthlyTransaction);
             Balance += monthlyTransaction.TransactionValue;
             if (!TryMakeCreditTransaction(monthlyTransaction, recipient))
                 return "Your credit transaction was completely rejected because you reached your max balance";
             return "Your transaction was accepted";
-        }
+        }        
+
         private bool TryMakeCreditTransaction(MonthlyTransaction monthlyTransaction, string recipient)
         {
             var creditTransaction = new CreditTransaction(false, monthlyTransaction.TransactionValue);
