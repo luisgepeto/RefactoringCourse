@@ -15,7 +15,6 @@ namespace RefactoringTests
         public void TestInitialize()
         {
             MixedAccount = new MixedAccount("My Account Holder Name", 9999);
-            Account = new Account("My Account Holder Name", 9999);
             DebitAccount = new DebitAccount("My Account Holder Name", 9999);
             CreditAccount = new CreditAccount("My Account Holder Name", 9999);
         }

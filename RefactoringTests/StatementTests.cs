@@ -13,7 +13,6 @@ namespace RefactoringTests
         public void Setup()
         {
             MixedAccount = new MixedAccount("Account Holder Name", 999);
-            Account = new Account("Account Holder Name", 999);
             Statement = new Statement(MixedAccount);
         }
 

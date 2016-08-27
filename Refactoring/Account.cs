@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Refactoring
 {
-    public class Account
+    public abstract class Account
     {
-        public Account(string accountHolderName, int accountNumber)
+        protected Account(string accountHolderName, int accountNumber)
         {
             TransactionList = new List<Transaction>();
             AccountHolderName = accountHolderName;
