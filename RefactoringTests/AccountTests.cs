@@ -8,11 +8,13 @@ namespace RefactoringTests
     public class AccountTests
     {
         private Account Account { get; set; }
+        private DebitAccount DebitAccount { get; set; }
         private CreditAccount CreditAccount { get; set; }
         [TestInitialize]
         public void TestInitialize()
         {
             Account = new Account("My Account Holder Name", 9999);
+            DebitAccount = new DebitAccount("My Account Holder Name", 9999);
             CreditAccount = new CreditAccount("My Account Holder Name", 9999);
         }
 
@@ -30,7 +32,7 @@ namespace RefactoringTests
         public void Account_GetLastTransaction_PreviousCreditTransaction_ReturnsSame()
         {
             //Arrange
-            Account.Credit(100, "Some Recipient");
+            CreditAccount.Credit(100, "Some Recipient");
             //Act
             var lastTransaction = Account.GetLastTransaction();
             //Assert
@@ -40,10 +42,10 @@ namespace RefactoringTests
         }
 
         [TestMethod]
-        public void Account_GetLastTransaction_PreviousDebitTransaction_ReturnsSame()
+        public void DebitAccount_GetLastTransaction_PreviousDebitTransaction_ReturnsSame()
         {
             //Arrange
-            Account.Debit(50, "Some Recipient");
+            DebitAccount.Debit(50, "Some Recipient");
             //Act
             var lastTransaction = Account.GetLastTransaction();
             //Assert
@@ -68,7 +70,7 @@ namespace RefactoringTests
         public void Account_GetLastTransactionDate_AfterTransaction_ReturnsTodaysDate()
         {
             //Arrange
-            Account.Debit(10, "Some Recipient");
+            DebitAccount.Debit(10, "Some Recipient");
             //Act
             var lastTransactionDate = Account.GetLastTransactionDate();
             //Assert

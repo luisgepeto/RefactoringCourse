@@ -33,16 +33,6 @@ namespace Refactoring
             return TransactionList.Count;
         }
 
-        public void Debit(decimal amount, string recipient)
-        {
-            Balance -= amount;
-            var debitTransaction = new DebitTransaction(true, amount);
-            debitTransaction.SetRecipient(recipient);
-            debitTransaction.SetSender(AccountHolderName);
-            TransactionList.Add(debitTransaction);
-            LastTransactionDate = DateTime.Now;
-        }
-
         public decimal GetBalance()
         {
             return Balance;
