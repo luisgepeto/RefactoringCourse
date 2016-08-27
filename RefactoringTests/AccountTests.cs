@@ -20,11 +20,11 @@ namespace RefactoringTests
         }
 
         [TestMethod]
-        public void Account_GetLastTransaction_NoPreviousTransaction_ReturnsNull()
+        public void MixedAccount_GetLastTransaction_NoPreviousTransaction_ReturnsNull()
         {
             //Arrange
             //Act
-            var lastTransaction = Account.GetLastTransaction();
+            var lastTransaction = MixedAccount.GetLastTransaction();
             //Assert
             Assert.IsNull(lastTransaction, "The last transaction should not exist when initializing");
         }
@@ -56,11 +56,11 @@ namespace RefactoringTests
         }
 
         [TestMethod]
-        public void Account_GetLastTransactionDate_BeforeTransaction_ReturnsNullDate()
+        public void MixedAccount_GetLastTransactionDate_BeforeTransaction_ReturnsNullDate()
         {
             //Arrange
             //Act
-            var lastTransactionDate = Account.GetLastTransactionDate();
+            var lastTransactionDate = MixedAccount.GetLastTransactionDate();
             //Assert
             Assert.IsNull(lastTransactionDate, "The last transaction date should not exist when initializing");
             Assert.IsFalse(lastTransactionDate.HasValue, "The last transaction date should not have a value");

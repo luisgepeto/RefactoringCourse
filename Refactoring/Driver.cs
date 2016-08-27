@@ -9,7 +9,6 @@ namespace Refactoring
        private DateTime LicenseExpireDate { get; set; }
        private DateTime DateOfBirth { get; set; }
        public Address Address { get; set; }
-       public string AddressLine1 { get; set; }
        public string AddressLine2 { get; set; }
        public string City { get; set; }
        public string State { get; set; }
@@ -20,6 +19,7 @@ namespace Refactoring
             DateOfBirth = dateOfBirth;
             LicenseNumber = licenseNumber;
             LicenseExpireDate = licenseExpireDate;
+            Address = new Address();
         }
         public int GetPointsOnLicense()
         {
@@ -51,10 +51,10 @@ namespace Refactoring
             {
                 formattedZip= Zip.Substring(0, 5);
             }
-            var fullAddress = String.Format("{0} {1} {2} {3} {4}", AddressLine1, AddressLine2, City, State, formattedZip).Trim();
+            var fullAddress = String.Format("{0} {1} {2} {3} {4}", Address.AddressLine1, AddressLine2, City, State, formattedZip).Trim();
             var outAddress = String.Empty;
             if (String.IsNullOrWhiteSpace(fullAddress)) return outAddress;
-            outAddress = AddressLine1;
+            outAddress = Address.AddressLine1;
             if (!String.IsNullOrWhiteSpace(AddressLine2)) outAddress += "\n" + AddressLine2;
             if (!String.IsNullOrWhiteSpace(City) || !String.IsNullOrWhiteSpace(State))
             {

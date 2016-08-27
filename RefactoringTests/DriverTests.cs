@@ -67,7 +67,7 @@ namespace RefactoringTests
         {
             //Arrange
             var driver = new Driver(DateTime.Now, 0, "LIC0001", DateTime.Now);
-            driver.AddressLine1 = "Address Line 1";
+            driver.Address.AddressLine1 = "Address Line 1";
             driver.AddressLine2 = "Address Line 2";
             driver.City = "City";
             driver.State = "State";

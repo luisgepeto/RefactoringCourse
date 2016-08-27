@@ -38,7 +38,7 @@ namespace RefactoringTests
             //Arrange
             var car = new Car("Some Brand");
             var driver = new CarDriver(DateTime.Now, 5, "1", DateTime.Now, "Brand");
-            driver.AddressLine1 = "My Address";
+            driver.Address.AddressLine1 = "My Address";
             car.SetDriver(driver);
             //Act
             var ownership = car.VerifyOwnership();
