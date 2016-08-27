@@ -42,14 +42,10 @@ namespace Refactoring
             if (DateOfBirth > today.AddYears(-age)) age--;
             return age;
         }
-        //Long Method
+        
         public string FormattedAddress()
         {
-            var formattedZip = Zip;
-            if (Zip != null && Zip.Length > 5)
-            {
-                formattedZip= Zip.Substring(0, 5);
-            }
+            var formattedZip = GetFormattedZip();
             var fullAddress = String.Format("{0} {1} {2} {3} {4}", AddressLine1, AddressLine2, City, State, formattedZip).Trim();
             var outAddress = String.Empty;
             if (String.IsNullOrWhiteSpace(fullAddress)) return outAddress;
@@ -64,6 +60,16 @@ namespace Refactoring
             }
             if (!String.IsNullOrWhiteSpace(formattedZip)) outAddress += "\n" + formattedZip;
             return outAddress;
+        }
+
+        private string GetFormattedZip()
+        {
+            var formattedZip = Zip;
+            if (Zip != null && Zip.Length > 5)
+            {
+                formattedZip = Zip.Substring(0, 5);
+            }
+            return formattedZip;
         }
     }
 }
