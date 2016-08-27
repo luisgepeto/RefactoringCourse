@@ -52,6 +52,7 @@
     <Compile Include="DebitTransaction.cs" />
     <Compile Include="InsuranceQuote.cs" />
     <Compile Include="Driver.cs" />
+    <Compile Include="InterestRate.cs" />
     <Compile Include="MixedAccount.cs" />
     <Compile Include="Statement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

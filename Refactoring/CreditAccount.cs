@@ -33,8 +33,7 @@ namespace Refactoring
             PerformTransaction(creditTransaction);
             return creditTransaction;
         }
-
-        public string SummaryCreditChargedMonthly(decimal totalAmount, string recipient, int numberOfMonths, decimal maxCreditAmount, double rateOfInterest, int numberOfYears)
+        public string SummaryCreditChargedMonthly(decimal totalAmount, string recipient, int numberOfMonths, decimal maxCreditAmount, double rateOfInterest, int numberOfYears, InterestRate interestRate)
         {
             var monthlyTransaction = new MonthlyTransaction()
             {
@@ -50,6 +49,11 @@ namespace Refactoring
             if (!TryMakeCreditTransaction(monthlyTransaction, recipient))
                 return "Your credit transaction was completely rejected because you reached your max balance";
             return "Your transaction was accepted";
+        }
+
+        public string SummaryCreditChargedMonthly(decimal totalAmount, string recipient, int numberOfMonths, decimal maxCreditAmount, double rateOfInterest, int numberOfYears)
+        {
+            return SummaryCreditChargedMonthly(totalAmount, recipient, numberOfMonths, maxCreditAmount, rateOfInterest, numberOfYears, null);
         }
 
         private bool TryMakeCreditTransaction(MonthlyTransaction monthlyTransaction, string recipient)
