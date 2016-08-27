@@ -21,7 +21,7 @@
         public void Credit(decimal amount, string recipient)
         {
             AddBalance(amount);
-            var debitTransaction = DebitAccount.Debit(amount, recipient);
+            var debitTransaction = CreditAccount.Credit(amount, recipient);
             PerformTransaction(debitTransaction);
         }
     }
