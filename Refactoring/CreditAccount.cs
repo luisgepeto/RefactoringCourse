@@ -76,4 +76,10 @@ namespace Refactoring
             return totalAmount / numberOfMonths;
         }
     }
+    internal class MonthlyTransaction
+    {
+        public decimal TransactionValue { get; set; }
+        public decimal BaseMonthlyTotal { get; set; }
+        public decimal MaxCreditAmount { get; set; }
+    }
 }
