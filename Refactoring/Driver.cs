@@ -45,9 +45,8 @@ namespace Refactoring
         
         public string FormattedAddress()
         {
-            var formattedZip = GetFormattedZip();
-            if (IsFullAddressEmpty(formattedZip)) return String.Empty;
-            return FormatAddress(formattedZip);
+            if (IsFullAddressEmpty(GetFormattedZip())) return String.Empty;
+            return FormatAddress(GetFormattedZip());
         }
 
         private string FormatAddress(string formattedZip)
