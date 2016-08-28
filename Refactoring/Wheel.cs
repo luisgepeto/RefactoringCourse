@@ -30,11 +30,6 @@ namespace Refactoring
     }
     public class FortuneWheel : Vehicle
     {
-        public string Drive()
-        {
-            throw new NotImplementedException();
-        }
-
         public virtual string Move()
         {
             return Wheel.Move();
