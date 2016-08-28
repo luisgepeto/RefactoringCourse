@@ -26,7 +26,7 @@ namespace Refactoring
 
         public decimal CalculateInterest(double rateOfInterest, int numberOfYears, InterestPeriod interestPeriodEnum)
         {
-            var numberOfPeriodsPerYear = NumberOfPeriodsPerYear(interestPeriodEnum);
+            var numberOfPeriodsPerYear = interestPeriodEnum.NumberOfPeriodsPerYear();
             return Math.Round((decimal)((double)Amount * Math.Pow(1 + rateOfInterest / numberOfPeriodsPerYear, numberOfPeriodsPerYear * numberOfYears)), 2);
         }
     }
