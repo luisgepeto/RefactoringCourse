@@ -25,11 +25,6 @@ namespace Refactoring
             return Sender;
         }
 
-        private string GetBasicSummary(string transactionType)
-        {
-            return String.Format("This is a {3} transaction for ${0} from {1} to {2}", Amount, Sender, Recipient, transactionType);
-        }
-
         public string GetSummary()
         {
             return String.Format("This is a debit transaction for ${0} from {1} to {2}", Amount, Sender, Recipient);

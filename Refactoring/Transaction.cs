@@ -38,6 +38,11 @@ namespace Refactoring
             }
             return numberOfPeriodsPerYear;
         }
+
+        protected string GetBasicSummary(string transactionType)
+        {
+            return String.Format("This is a {3} transaction for ${0} from {1} to {2}", Amount, Sender, Recipient, transactionType);
+        }
     }
 
     public class InvestmentTransaction : Transaction
