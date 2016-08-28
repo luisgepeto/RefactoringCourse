@@ -33,6 +33,21 @@ namespace Refactoring
 
         public decimal CalculateInterest(double rateOfInterest, int numberOfYears, InterestPeriod interestPeriodEnum)
         {
+            var numberOfPeriodsPerYear = NumberOfPeriodsPerYear(interestPeriodEnum);
+            var initialAmount = (double)Amount;
+            for (var i = 0; i < numberOfYears; i++)
+            {
+                var periodRate = rateOfInterest/numberOfPeriodsPerYear;
+                for (var j = 0; j < numberOfPeriodsPerYear; j++)
+                {
+                    initialAmount += initialAmount*periodRate;
+                }
+            }
+            return Math.Round((decimal)initialAmount, 2);
+        }
+
+        private double NumberOfPeriodsPerYear(InterestPeriod interestPeriodEnum)
+        {
             double numberOfPeriodsPerYear = 0;
             switch (interestPeriodEnum)
             {
@@ -49,16 +64,7 @@ namespace Refactoring
                     numberOfPeriodsPerYear = 1;
                     break;
             }
-            var initialAmount = (double)Amount;
-            for (var i = 0; i < numberOfYears; i++)
-            {
-                var periodRate = rateOfInterest/numberOfPeriodsPerYear;
-                for (var j = 0; j < numberOfPeriodsPerYear; j++)
-                {
-                    initialAmount += initialAmount*periodRate;
-                }
-            }
-            return Math.Round((decimal)initialAmount, 2);
+            return numberOfPeriodsPerYear;
         }
     }
 }
