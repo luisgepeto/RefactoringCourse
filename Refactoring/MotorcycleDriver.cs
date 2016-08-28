@@ -6,18 +6,17 @@ namespace Refactoring
     {
         public MotorcycleDriver(DateTime dateOfBirth, int pointsOnLicense, string licenseNumber, DateTime licenseExpireDate, string motorcycleModel) : base(dateOfBirth, pointsOnLicense, licenseNumber, licenseExpireDate)
         {
-            Motorcycle = new Motorcycle(MotorcycleModel);
+            MotorcycleModel = motorcycleModel;
         }
 
-        public Motorcycle Motorcycle { get; set; }
-        private string MotorcycleModel { get; set; }
-        public string GetMotorcycleModel()
-        {
-            return Motorcycle.MotorcycleModel;
-        }
+        public string MotorcycleModel { get; set; }
         public string Drive()
         {
-            return Motorcycle.Drive();
+            return "I am driving a motorbike";
+        }
+        public int GetNumberOfWheels()
+        {
+            return 2;
         }
     }
 }
