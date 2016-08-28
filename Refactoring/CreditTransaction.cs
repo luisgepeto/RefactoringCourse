@@ -18,6 +18,7 @@ namespace Refactoring
         {
             return Sender;
         }
+        //16 duplicate code
         public string GetSummary()
         {
             return String.Format("This is a credit transaction for ${0} from {1} to {2}", Amount, Sender, Recipient);
