@@ -54,6 +54,7 @@ namespace Refactoring
 
     public class LongTermInvestmentTransaction : InvestmentTransaction
     {
+        //11. lazy class
         public string InvestmentPeriod { get; set; }
         public LongTermInvestmentTransaction(bool isDebit, decimal amount) : base(isDebit, amount)
         {
