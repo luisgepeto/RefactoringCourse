@@ -29,7 +29,7 @@ namespace Refactoring
         public string Title
         {
             get { return _title; }
-            set { _title = value; }
+            private set { _title = value; }
         }
 
         public List<Account> PersonalAccounts
