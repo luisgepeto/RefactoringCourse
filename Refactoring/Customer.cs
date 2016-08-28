@@ -40,12 +40,12 @@ namespace Refactoring
 
         public void AddAccount(Account account)
         {
-            
+            PersonalAccounts.Add(account);
         }
 
         public Account RemoveAccount(Account account)
         {
-            return null;
+            return PersonalAccounts.Remove(account) ? account : null;
         }
     }
 }
