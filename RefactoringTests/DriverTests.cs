@@ -73,7 +73,7 @@ namespace RefactoringTests
             driver.Address.State = "State";
             driver.Address.Zip = "123456";
             //Act
-            var formattedAddress = driver.FormattedAddress();
+            var formattedAddress = driver.GetAddress().FormattedAddress();
             //Assert
             Assert.AreEqual("Address Line 1\nAddress Line 2\nCity, State\n12345", formattedAddress, "The license report should match the expected");
         }

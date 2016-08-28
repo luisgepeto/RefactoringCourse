@@ -6,6 +6,10 @@ namespace Refactoring
     {
         private DateTime DateOfBirth { get; set; }
         public Address Address { get; set; }
+        public Address GetAddress()
+        {
+            return Address;
+        }
         private License License { get; set; }
         public License GetLicense()
         {
@@ -32,11 +36,6 @@ namespace Refactoring
         public string PrintAge()
         {
             return String.Format("You are {0} years old.", GetAge());
-        }
-
-        public string FormattedAddress()
-        {
-            return Address.FormattedAddress();
         }
     }
 }

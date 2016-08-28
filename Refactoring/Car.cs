@@ -33,9 +33,9 @@ namespace Refactoring
             if (Driver != null)
             {
                 result = "This car has an owner";
-                if (!String.IsNullOrWhiteSpace(Driver.FormattedAddress()))
+                if (!String.IsNullOrWhiteSpace(Driver.GetAddress().FormattedAddress()))
                 {
-                    result += "\nThe owner's address is:\n"+Driver.FormattedAddress();
+                    result += "\nThe owner's address is:\n"+Driver.GetAddress().FormattedAddress();
                 }
             }
             return result;
