@@ -24,11 +24,11 @@ namespace Refactoring
 
         public bool IsLicenseValid()
         {
-            return PointsOnLicense < 5;
+            return PointsOnLicense < 10;
         }
         public string GenerateLicenseReport()
         {
-            return String.Format("Your license number is {0} and you have {1} points in your license. Your license expires on {2}", LicenseNumber,
+            return String.Format("Your license number is {0} and you have {1} points in your license. Your license expires on {2}. Thanks", LicenseNumber,
                 PointsOnLicense, LicenseExpireDate.ToString("d"));
         }
 

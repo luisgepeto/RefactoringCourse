@@ -22,7 +22,7 @@ namespace RefactoringTests
         public void Driver_IsLicenseValid_SetTo5_ReturnsFalse()
         {
             //Arrange
-            var driver = new Driver(DateTime.Now, 5, "LICENSENUMBER", DateTime.Now);
+            var driver = new Driver(DateTime.Now, 10, "LICENSENUMBER", DateTime.Now);
             //Act
             var isLicenseValid = driver.IsLicenseValid();
             //Assert
@@ -33,7 +33,7 @@ namespace RefactoringTests
         public void Driver_IsLicenseValid_SetTo4_ReturnsTrue()
         {
             //Arrange
-            var driver = new Driver(DateTime.Now, 4, "LICENSENUMBER", DateTime.Now);
+            var driver = new Driver(DateTime.Now, 9, "LICENSENUMBER", DateTime.Now);
             //Act
             var isLicenseValid = driver.IsLicenseValid();
             //Assert
@@ -48,7 +48,7 @@ namespace RefactoringTests
             //Act
             var licenseReport = driver.GenerateLicenseReport();
             //Assert
-            Assert.AreEqual("Your license number is LIC0001 and you have 2 points in your license. Your license expires on 1/1/2017", licenseReport, "The license report should match the expected");
+            Assert.AreEqual("Your license number is LIC0001 and you have 2 points in your license. Your license expires on 1/1/2017", licenseReport, "The license report should match the expected. Thanks");
         }
 
         [TestMethod]
