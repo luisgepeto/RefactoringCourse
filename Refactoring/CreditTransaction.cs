@@ -29,26 +29,5 @@ namespace Refactoring
             var numberOfPeriodsPerYear = NumberOfPeriodsPerYear(interestPeriodEnum);
             return Math.Round((decimal)((double)Amount * Math.Pow(1 + rateOfInterest / numberOfPeriodsPerYear, numberOfPeriodsPerYear * numberOfYears)), 2);
         }
-
-        private double NumberOfPeriodsPerYear(InterestPeriod interestPeriodEnum)
-        {
-            double numberOfPeriodsPerYear = 0;
-            switch (interestPeriodEnum)
-            {
-                case InterestPeriod.Day:
-                    numberOfPeriodsPerYear = 365;
-                    break;
-                case InterestPeriod.Month:
-                    numberOfPeriodsPerYear = 12;
-                    break;
-                case InterestPeriod.Semester:
-                    numberOfPeriodsPerYear = 2;
-                    break;
-                case InterestPeriod.Year:
-                    numberOfPeriodsPerYear = 1;
-                    break;
-            }
-            return numberOfPeriodsPerYear;
-        }
     }
 }

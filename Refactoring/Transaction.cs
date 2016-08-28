@@ -16,6 +16,27 @@ namespace Refactoring
         {
             throw new NotImplementedException();
         }
+
+        protected double NumberOfPeriodsPerYear(InterestPeriod interestPeriodEnum)
+        {
+            double numberOfPeriodsPerYear = 0;
+            switch (interestPeriodEnum)
+            {
+                case InterestPeriod.Day:
+                    numberOfPeriodsPerYear = 365;
+                    break;
+                case InterestPeriod.Month:
+                    numberOfPeriodsPerYear = 12;
+                    break;
+                case InterestPeriod.Semester:
+                    numberOfPeriodsPerYear = 2;
+                    break;
+                case InterestPeriod.Year:
+                    numberOfPeriodsPerYear = 1;
+                    break;
+            }
+            return numberOfPeriodsPerYear;
+        }
     }
 
     public abstract class InvestmentTransaction : Transaction
