@@ -29,10 +29,8 @@ namespace Refactoring
         public BycicleDriver(DateTime dateOfBirth, int pointsOnLicense, string licenseNumber, DateTime licenseExpireDate, string bycicleModel) : base(dateOfBirth, pointsOnLicense, licenseNumber, licenseExpireDate)
         {
             BycicleModel = bycicleModel;
-            Bycicle = new Bycicle(BycicleModel);
         }
-
-        public Bycicle Bycicle { get; set; }
+        
         private string BycicleModel { get; set; }
         public string GetBycicleModel()
         {
@@ -40,7 +38,11 @@ namespace Refactoring
         }
         public string Drive()
         {
-            return Bycicle.Drive();
+            return "I am driving a bike";
+        }
+        public int GetNumberOfWheels()
+        {
+            return 2;
         }
     }
 }
