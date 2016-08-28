@@ -14,11 +14,7 @@ namespace Refactoring
             IsDebit = isDebit;
             Amount = amount;
         }
-        public void ScheduleTransaction(DateTime futureDate)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         protected double NumberOfPeriodsPerYear(InterestPeriod interestPeriodEnum)
         {
             double numberOfPeriodsPerYear = 0;
@@ -62,7 +58,6 @@ namespace Refactoring
         {
         }
         public string InvestmentFundName { get; set; }
-        public string InvestmentPeriod { get; set; }
 
         public string GetSummary()
         {
