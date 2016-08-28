@@ -24,11 +24,6 @@ namespace Refactoring
             return String.Format("This is a credit transaction for ${0} from {1} to {2}", Amount, Sender, Recipient);
         }
 
-        public decimal CalculateInterest(double rateOfInterest, int numberOfYears, string interestPeriod, InterestPeriod interestPeriodEnum)
-        {
-            return CalculateInterest(rateOfInterest, numberOfYears, interestPeriodEnum);
-        }
-
         public decimal CalculateInterest(double rateOfInterest, int numberOfYears, InterestPeriod interestPeriodEnum)
         {
             double numberOfPeriodsPerYear = 0;
