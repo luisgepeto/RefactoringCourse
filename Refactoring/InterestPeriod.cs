@@ -8,7 +8,7 @@
         Year
     }
 
-    public static class Extensions
+    public static partial class Extensions
     {
         public static double NumberOfPeriodsPerYear(this InterestPeriod interestPeriod)
         {
