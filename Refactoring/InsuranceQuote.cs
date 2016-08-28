@@ -11,10 +11,10 @@
 
         public RiskFactor CalculateDriverRiskFactor()
         {
-            if (Driver.GetPointsOnLicense() > 3 || Driver.GetAge() < 25)
+            if (Driver.GetLicense().GetPointsOnLicense() > 3 || Driver.GetAge() < 25)
                 return RiskFactor.High;
 
-            if (Driver.GetPointsOnLicense() > 0)
+            if (Driver.GetLicense().GetPointsOnLicense() > 0)
                 return RiskFactor.Moderate;
 
             return RiskFactor.Low;

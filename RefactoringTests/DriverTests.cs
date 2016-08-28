@@ -13,7 +13,7 @@ namespace RefactoringTests
             //Arrange
             var driver = new Driver(DateTime.Now, 5, "LICENSENUMBER", DateTime.Now);
             //Act
-            var pointsOnLicense = driver.GetPointsOnLicense();
+            var pointsOnLicense = driver.GetLicense().GetPointsOnLicense();
             //Assert
             Assert.AreEqual(5, pointsOnLicense, "The number of license points should be 5");
         }
@@ -24,7 +24,7 @@ namespace RefactoringTests
             //Arrange
             var driver = new Driver(DateTime.Now, 10, "LICENSENUMBER", DateTime.Now);
             //Act
-            var isLicenseValid = driver.IsLicenseValid();
+            var isLicenseValid = driver.GetLicense().IsLicenseValid();
             //Assert
             Assert.IsFalse(isLicenseValid, "The license should not be valid");
         }
@@ -35,7 +35,7 @@ namespace RefactoringTests
             //Arrange
             var driver = new Driver(DateTime.Now, 9, "LICENSENUMBER", DateTime.Now);
             //Act
-            var isLicenseValid = driver.IsLicenseValid();
+            var isLicenseValid = driver.GetLicense().IsLicenseValid();
             //Assert
             Assert.IsTrue(isLicenseValid, "The license should be valid");
         }
@@ -46,7 +46,7 @@ namespace RefactoringTests
             //Arrange
             var driver = new Driver(DateTime.Now, 2, "LIC0001", new DateTime(2017, 1, 1));
             //Act
-            var licenseReport = driver.GenerateLicenseReport();
+            var licenseReport = driver.GetLicense().GenerateLicenseReport();
             //Assert
             Assert.AreEqual("Your license number is LIC0001 and you have 2 points in your license. Your license expires on 1/1/2017. Thanks", licenseReport, "The license report should match the expected");
         }

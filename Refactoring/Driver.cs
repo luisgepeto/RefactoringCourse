@@ -20,19 +20,6 @@ namespace Refactoring
             License.LicenseNumber = licenseNumber;
             License.LicenseExpireDate = licenseExpireDate;
         }
-        public int GetPointsOnLicense()
-        {
-            return License.GetPointsOnLicense();
-        }
-
-        public bool IsLicenseValid()
-        {
-            return License.IsLicenseValid()
-        }
-        public string GenerateLicenseReport()
-        {
-            return License.GenerateLicenseReport();
-        }
 
         public int GetAge()
         {
