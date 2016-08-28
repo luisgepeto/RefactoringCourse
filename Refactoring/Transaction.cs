@@ -44,6 +44,16 @@ namespace Refactoring
         {
             return String.Format("This is a {3} transaction for ${0} from {1} to {2}", Amount, Sender, Recipient, transactionType);
         }
+
+        public decimal CalculateInterest(double rateOfInterest, int numberOfYears, InterestPeriod interestPeriodEnum)
+        {
+            return
+                Math.Round(
+                    (decimal)
+                        ((double)Amount *
+                         Math.Pow(1 + rateOfInterest / interestPeriodEnum.NumberOfPeriodsPerYear(),
+                             interestPeriodEnum.NumberOfPeriodsPerYear() * numberOfYears)), 2);
+        }
     }
 
     public class InvestmentTransaction : Transaction

@@ -28,19 +28,5 @@ namespace Refactoring
         {
             return GetBasicSummary("debit");
         }
-
-        public decimal CalculateInterest(double rateOfInterest, int numberOfYears, InterestPeriod interestPeriodEnum)
-        {
-            var initialAmount = (double)Amount;
-            for (var i = 0; i < numberOfYears; i++)
-            {
-                var periodRate = rateOfInterest/ interestPeriodEnum.NumberOfPeriodsPerYear();
-                for (var j = 0; j < interestPeriodEnum.NumberOfPeriodsPerYear(); j++)
-                {
-                    initialAmount += initialAmount*periodRate;
-                }
-            }
-            return Math.Round((decimal)initialAmount, 2);
-        }
     }
 }

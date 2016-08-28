@@ -22,15 +22,5 @@ namespace Refactoring
         {
             return GetBasicSummary("credit");
         }
-
-        public decimal CalculateInterest(double rateOfInterest, int numberOfYears, InterestPeriod interestPeriodEnum)
-        {
-            return
-                Math.Round(
-                    (decimal)
-                        ((double) Amount*
-                         Math.Pow(1 + rateOfInterest/interestPeriodEnum.NumberOfPeriodsPerYear(),
-                             interestPeriodEnum.NumberOfPeriodsPerYear()*numberOfYears)), 2);
-        }
     }
 }
