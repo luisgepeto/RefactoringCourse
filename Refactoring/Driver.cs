@@ -4,6 +4,10 @@ namespace Refactoring
 {
     public class Driver
     {
+        public virtual bool IsNull()
+        {
+            return false;
+        }
         private DateTime DateOfBirth { get; set; }
         public Address Address { get; set; }
         public Address GetAddress()

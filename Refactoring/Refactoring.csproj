@@ -58,6 +58,7 @@
     <Compile Include="MixedAccount.cs" />
     <Compile Include="Motorcycle.cs" />
     <Compile Include="MotorcycleDriver.cs" />
+    <Compile Include="NullDriver.cs" />
     <Compile Include="Statement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transaction.cs" />
