@@ -45,19 +45,10 @@ namespace Refactoring
         {
         }
         public string InvestmentFundName { get; set; }
-
+        public string InvestmentPeriod { get; set; }
         public string GetSummary()
         {
             return String.Format("This is an investment transaction for ${0} in fund {1}", Amount, InvestmentFundName);
-        }
-    }
-
-    public class LongTermInvestmentTransaction : InvestmentTransaction
-    {
-        //11. lazy class
-        public string InvestmentPeriod { get; set; }
-        public LongTermInvestmentTransaction(bool isDebit, decimal amount) : base(isDebit, amount)
-        {
         }
     }
 }
