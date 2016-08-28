@@ -20,7 +20,6 @@
         public double CalculateInsurancePremium(double insuranceValue)
         {
             var riskFactor = CalculateDriverRiskFactor();
-            //Switch Statements - Try to add case -  make extension method class along with enum
             switch (riskFactor)
             {
                 case RiskFactor.Low:
