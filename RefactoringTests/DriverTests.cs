@@ -48,7 +48,7 @@ namespace RefactoringTests
             //Act
             var licenseReport = driver.GenerateLicenseReport();
             //Assert
-            Assert.AreEqual("Your license number is LIC0001 and you have 2 points in your license. Your license expires on 1/1/2017", licenseReport, "The license report should match the expected. Thanks");
+            Assert.AreEqual("Your license number is LIC0001 and you have 2 points in your license. Your license expires on 1/1/2017. Thanks", licenseReport, "The license report should match the expected");
         }
 
         [TestMethod]

@@ -54,6 +54,7 @@
     <Compile Include="Driver.cs" />
     <Compile Include="InterestPeriod.cs" />
     <Compile Include="InterestRate.cs" />
+    <Compile Include="License.cs" />
     <Compile Include="MixedAccount.cs" />
     <Compile Include="Statement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
