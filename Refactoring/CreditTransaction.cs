@@ -24,7 +24,7 @@ namespace Refactoring
             return String.Format("This is a credit transaction for ${0} from {1} to {2}", Amount, Sender, Recipient);
         }
 
-        public decimal CalculateInterest(double rateOfInterest, int numberOfYears, string interestPeriod)
+        public decimal CalculateInterest(double rateOfInterest, int numberOfYears, string interestPeriod, InterestPeriod interestPeriodEnum)
         {
             double numberOfPeriodsPerYear = 0;
             switch (interestPeriod)
@@ -42,7 +42,12 @@ namespace Refactoring
                     numberOfPeriodsPerYear = 1;
                     break;
             }
-            return Math.Round((decimal)((double) Amount*Math.Pow(1 + rateOfInterest/numberOfPeriodsPerYear, numberOfPeriodsPerYear*numberOfYears)), 2);
+            return Math.Round((decimal)((double)Amount * Math.Pow(1 + rateOfInterest / numberOfPeriodsPerYear, numberOfPeriodsPerYear * numberOfYears)), 2);
+        }
+
+        public decimal CalculateInterest(double rateOfInterest, int numberOfYears, string interestPeriod)
+        {
+            return CalculateInterest(rateOfInterest, numberOfYears, interestPeriod, InterestPeriod.Day);
         }
     }
 }
