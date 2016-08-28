@@ -27,7 +27,7 @@ namespace Refactoring
 
         public string GetSummary()
         {
-            return String.Format("This is a debit transaction for ${0} from {1} to {2}", Amount, Sender, Recipient);
+            return GetBasicSummary("debit");
         }
 
         public decimal CalculateInterest(double rateOfInterest, int numberOfYears, InterestPeriod interestPeriodEnum)
