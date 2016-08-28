@@ -7,6 +7,7 @@
         {
             Account = account;
         }
+        //22. message chaing
         public decimal GetTotalCreditBalance()
         {
             var totalCreditBalance = 0m;
