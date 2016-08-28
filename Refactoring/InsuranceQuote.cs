@@ -8,7 +8,7 @@
         {
             Driver = driver;
         }
-        //20. feature envy
+        
         public RiskFactor CalculateDriverRiskFactor()
         {
             if (Driver.GetLicense().GetPointsOnLicense() > 3 || Driver.GetAge() < 25)

@@ -37,5 +37,21 @@ namespace Refactoring
         {
             return String.Format("You are {0} years old.", GetAge());
         }
+
+        public RiskFactor CalculateDriverRiskFactor()
+        {
+            if (GetLicense().GetPointsOnLicense() > 3 || GetAge() < 25)
+                return RiskFactor.High;
+
+            if (GetLicense().GetPointsOnLicense() > 0)
+                return RiskFactor.Moderate;
+
+            return RiskFactor.Low;
+        }
+
+        public double CalculateInsurancePremium(double insuranceValue)
+        {
+            return insuranceValue * CalculateDriverRiskFactor().RiskMultiplier();
+        }
     }
 }
