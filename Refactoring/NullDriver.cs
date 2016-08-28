@@ -12,5 +12,11 @@ namespace Refactoring
         {
             return true;
         }
+
+        public override string VerifyOwnership()
+        {
+            var result = "This car has no owner";
+            return result;
+        }
     }
 }

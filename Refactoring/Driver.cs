@@ -58,7 +58,7 @@ namespace Refactoring
             return insuranceValue * CalculateDriverRiskFactor().RiskMultiplier();
         }
 
-        public string VerifyOwnership()
+        public virtual string VerifyOwnership()
         {
             var result = "This car has an owner";
             if (!String.IsNullOrWhiteSpace(GetAddress().FormattedAddress()))
