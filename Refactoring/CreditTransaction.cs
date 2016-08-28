@@ -18,7 +18,11 @@ namespace Refactoring
         {
             return Sender;
         }
-        //16 duplicate code
+
+        private string GetBasicSummary(string transactionType)
+        {
+            return String.Format("This is a {3} transaction for ${0} from {1} to {2}", Amount, Sender, Recipient, transactionType);
+        }
         public string GetSummary()
         {
             return String.Format("This is a credit transaction for ${0} from {1} to {2}", Amount, Sender, Recipient);
