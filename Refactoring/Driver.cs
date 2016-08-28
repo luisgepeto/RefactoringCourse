@@ -39,6 +39,11 @@ namespace Refactoring
             if (DateOfBirth > today.AddYears(-age)) age--;
             return age;
         }
+
+        public string PrintAge()
+        {
+            return String.Format("You are {0} years old.", GetAge());
+        }
         
         public string FormattedAddress()
         {
