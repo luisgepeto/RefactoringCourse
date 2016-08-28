@@ -11,18 +11,12 @@
         
         public RiskFactor CalculateDriverRiskFactor()
         {
-            if (Driver.GetLicense().GetPointsOnLicense() > 3 || Driver.GetAge() < 25)
-                return RiskFactor.High;
-
-            if (Driver.GetLicense().GetPointsOnLicense() > 0)
-                return RiskFactor.Moderate;
-
-            return RiskFactor.Low;
+            return Driver.CalculateDriverRiskFactor();
         }
 
         public double CalculateInsurancePremium(double insuranceValue)
         {
-            return insuranceValue*CalculateDriverRiskFactor().RiskMultiplier();
+            return Driver.CalculateInsurancePremium(insuranceValue);
         }
     }
 
