@@ -8,6 +8,11 @@ namespace Refactoring
         {
         }
 
+        public NullDriver()
+        {
+            
+        }
+
         public override bool IsNull()
         {
             return true;

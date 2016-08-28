@@ -13,7 +13,7 @@ namespace Refactoring
         }
 
         private Driver Driver { get; set; }
-        public void SetDriver(CarDriver driver)
+        public void SetDriver(Driver driver)
         {
             Driver = driver;
         }
@@ -29,12 +29,7 @@ namespace Refactoring
         }
         public string VerifyOwnership()
         {
-            var result = "This car has no owner";
-            if (!Driver.IsNull())
-            {
-                return Driver.VerifyOwnership();
-            }
-            return result;
+            return Driver.VerifyOwnership();
         }
 
     }

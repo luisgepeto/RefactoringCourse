@@ -29,6 +29,10 @@ namespace Refactoring
             License.LicenseExpireDate = licenseExpireDate;
         }
 
+        public Driver()
+        {
+        }
+
         public int GetAge()
         {
             var today = DateTime.Today;

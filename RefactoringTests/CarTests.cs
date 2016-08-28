@@ -12,6 +12,7 @@ namespace RefactoringTests
         {
             //Arrange
             var car = new Car("Some Brand");
+            car.SetDriver(new NullDriver());
             //Act
             var ownership = car.VerifyOwnership();
             //Assert
