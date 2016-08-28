@@ -30,7 +30,7 @@ namespace Refactoring
         public string VerifyOwnership()
         {
             var result = "This car has no owner";
-            if (Driver != null)
+            if (!Driver.IsNull())
             {
                 return Driver.VerifyOwnership();
             }
