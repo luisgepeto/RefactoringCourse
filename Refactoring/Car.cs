@@ -18,7 +18,7 @@ namespace Refactoring
             Driver = driver;
         }
 
-        public override string Drive()
+        public string Drive()
         {
             return "I am driving a car";
         }

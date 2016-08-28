@@ -30,7 +30,7 @@ namespace Refactoring
     }
     public class FortuneWheel : Vehicle
     {
-        public override string Drive()
+        public string Drive()
         {
             throw new NotImplementedException();
         }

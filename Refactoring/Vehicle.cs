@@ -7,10 +7,6 @@
             Wheel = new Wheel();
         }
         public Wheel Wheel { get; set; }
-        public virtual string Drive()
-        {
-            return "I am driving a vehicle";
-        }
         public virtual string Move()
         {
             return Wheel.Move();
@@ -30,7 +26,7 @@
         }
 
         public string BycicleModel { get; set; }
-        public override string Drive()
+        public string Drive()
         {
             return "I am driving a bike";
         }
