@@ -67,7 +67,7 @@ namespace Refactoring
         }
         private decimal GetNextTransactionValue(double rateOfInterest, int numberOfYears, MonthlyTransaction monthlyTransaction)
         {
-            return new CreditTransaction(false, monthlyTransaction.BaseMonthlyTotal).CalculateInterest(rateOfInterest, numberOfYears, "Month");
+            return new CreditTransaction(false, monthlyTransaction.BaseMonthlyTotal).CalculateInterest(rateOfInterest, numberOfYears, "Month", InterestPeriod.Month);
         }
         
     }

@@ -44,10 +44,5 @@ namespace Refactoring
             }
             return Math.Round((decimal)((double)Amount * Math.Pow(1 + rateOfInterest / numberOfPeriodsPerYear, numberOfPeriodsPerYear * numberOfYears)), 2);
         }
-
-        public decimal CalculateInterest(double rateOfInterest, int numberOfYears, string interestPeriod)
-        {
-            return CalculateInterest(rateOfInterest, numberOfYears, interestPeriod, InterestPeriod.Day);
-        }
     }
 }
