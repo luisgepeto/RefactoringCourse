@@ -17,6 +17,7 @@ namespace Refactoring
             return Tire.Stop();
         }
     }
+    //23. remove middle mand
     public class Tire
     {
         public string Move()
