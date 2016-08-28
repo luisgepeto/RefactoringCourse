@@ -37,5 +37,15 @@ namespace Refactoring
             get { return _personalAccounts; }
             set { _personalAccounts = value; }
         }
+
+        public void AddAccount(Account account)
+        {
+            
+        }
+
+        public Account RemoveAccount(Account account)
+        {
+            return null;
+        }
     }
 }
