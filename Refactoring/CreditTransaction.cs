@@ -26,19 +26,24 @@ namespace Refactoring
 
         public decimal CalculateInterest(double rateOfInterest, int numberOfYears, string interestPeriod, InterestPeriod interestPeriodEnum)
         {
+            return CalculateInterest(rateOfInterest, numberOfYears, interestPeriodEnum);
+        }
+
+        public decimal CalculateInterest(double rateOfInterest, int numberOfYears, InterestPeriod interestPeriodEnum)
+        {
             double numberOfPeriodsPerYear = 0;
-            switch (interestPeriod)
+            switch (interestPeriodEnum)
             {
-                case "Day":
+                case InterestPeriod.Day:
                     numberOfPeriodsPerYear = 365;
                     break;
-                case "Month":
+                case InterestPeriod.Month:
                     numberOfPeriodsPerYear = 12;
                     break;
-                case "Semester":
+                case InterestPeriod.Semester:
                     numberOfPeriodsPerYear = 2;
                     break;
-                case "Year":
+                case InterestPeriod.Year:
                     numberOfPeriodsPerYear = 1;
                     break;
             }
