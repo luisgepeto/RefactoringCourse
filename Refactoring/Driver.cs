@@ -4,10 +4,14 @@ namespace Refactoring
 {
     public class Driver
     {
-       private DateTime DateOfBirth { get; set; }
-       public Address Address { get; set; }
-       public License License { get; set; }
-       public Driver(DateTime dateOfBirth, int pointsOnLicense, string licenseNumber, DateTime licenseExpireDate)
+        private DateTime DateOfBirth { get; set; }
+        public Address Address { get; set; }
+        private License License { get; set; }
+        public License GetLicense()
+        {
+            return License;
+        }
+        public Driver(DateTime dateOfBirth, int pointsOnLicense, string licenseNumber, DateTime licenseExpireDate)
         {
             DateOfBirth = dateOfBirth;
             Address = new Address();
@@ -22,7 +26,7 @@ namespace Refactoring
         }
 
         public bool IsLicenseValid()
-        {                                                                                                         
+        {
             return License.IsLicenseValid()
         }
         public string GenerateLicenseReport()
@@ -42,7 +46,7 @@ namespace Refactoring
         {
             return String.Format("You are {0} years old.", GetAge());
         }
-        
+
         public string FormattedAddress()
         {
             return Address.FormattedAddress();
