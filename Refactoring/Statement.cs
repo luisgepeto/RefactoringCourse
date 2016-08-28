@@ -7,18 +7,14 @@
         {
             Account = account;
         }
-        //22. message chaing
+        
         public decimal GetTotalCreditBalance()
         {
             var totalCreditBalance = 0m;
             var totalTransactions = Account.GetTransactionCount();
             for (var i = 0; i < totalTransactions; i++)
             {
-                var transaction = Account.GetTransactionAt(i);
-                if (transaction is CreditTransaction)
-                {
-                    totalCreditBalance += transaction.Amount;
-                }
+                totalCreditBalance += Account.GetTransactionAmountIfCreditAt(i);
             }
             return totalCreditBalance;
         }
@@ -29,11 +25,7 @@
             var totalTransactions = Account.GetTransactionCount();
             for (var i = 0; i < totalTransactions; i++)
             {
-                var transaction = Account.GetTransactionAt(i);
-                if (transaction is DebitTransaction)
-                {
-                    totalDebitBalance += transaction.Amount;
-                }
+                totalDebitBalance += Account.GetTransactionAmountIfDebitAt(i);
             }
             return totalDebitBalance;
         }

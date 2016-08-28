@@ -27,6 +27,21 @@ namespace Refactoring
         {
             return TransactionList.ElementAtOrDefault(index);
         }
+
+        public decimal GetTransactionAmountIfCreditAt(int index)
+        {
+            var transaction =  GetTransactionAt(index);
+            if (transaction is CreditTransaction) return transaction.Amount;
+            return 0;
+        }
+
+        public decimal GetTransactionAmountIfDebitAt(int index)
+        {
+            var transaction = GetTransactionAt(index);
+            if (transaction is DebitTransaction) return transaction.Amount;
+            return 0;
+        }
+
         public int GetTransactionCount()
         {
             return TransactionList.Count;
