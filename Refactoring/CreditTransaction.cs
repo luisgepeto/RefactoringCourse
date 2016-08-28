@@ -4,7 +4,6 @@ namespace Refactoring
     public class CreditTransaction : Transaction
     {
         public CreditTransaction(bool isDebit, decimal amount) : base(isDebit, amount){}
-        private string Sender { get; set; }
         public void SetRecipient(string recipient)
         {
             Recipient = recipient;

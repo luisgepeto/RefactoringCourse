@@ -7,6 +7,7 @@ namespace Refactoring
         public bool IsDebit { get; private set; }
         public decimal Amount { get; private set; }
         protected string Recipient { get; set; }
+        protected string Sender { get; set; }
 
         protected Transaction(bool isDebit, decimal amount)
         {
