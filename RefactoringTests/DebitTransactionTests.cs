@@ -70,7 +70,7 @@ namespace RefactoringTests
             //Arrange
             var transaction = new DebitTransaction(true, 150);
             //Act
-            var interest = transaction.CalculateInterest(0.03, 10, "Some Period");
+            var interest = transaction.CalculateInterest(0.03, 10, (InterestPeriod)9);
             //Assert
             Assert.AreEqual(150, interest, "The amount with interest must equal the expected");
         }
@@ -81,7 +81,7 @@ namespace RefactoringTests
             //Arrange
             var transaction = new DebitTransaction(true, 150);
             //Act
-            var interest = transaction.CalculateInterest(0.03, 10, "Day");
+            var interest = transaction.CalculateInterest(0.03, 10, InterestPeriod.Day);
             //Assert
             Assert.AreEqual(202.48m, interest, "The amount with interest must equal the expected");
         }
@@ -92,7 +92,7 @@ namespace RefactoringTests
             //Arrange
             var transaction = new DebitTransaction(true, 150);
             //Act
-            var interest = transaction.CalculateInterest(0.03, 10, "Month");
+            var interest = transaction.CalculateInterest(0.03, 10, InterestPeriod.Month);
             //Assert
             Assert.AreEqual(202.40m, interest, "The amount with interest must equal the expected");
         }
@@ -103,7 +103,7 @@ namespace RefactoringTests
             //Arrange
             var transaction = new DebitTransaction(true, 150);
             //Act
-            var interest = transaction.CalculateInterest(0.03, 10, "Semester");
+            var interest = transaction.CalculateInterest(0.03, 10, InterestPeriod.Semester);
             //Assert
             Assert.AreEqual(202.03m, interest, "The amount with interest must equal the expected");
         }
@@ -114,7 +114,7 @@ namespace RefactoringTests
             //Arrange
             var transaction = new DebitTransaction(true, 150);
             //Act
-            var interest = transaction.CalculateInterest(0.03, 10, "Year");
+            var interest = transaction.CalculateInterest(0.03, 10, InterestPeriod.Year);
             //Assert
             Assert.AreEqual(201.59m, interest, "The amount with interest must equal the expected");
         }

@@ -31,21 +31,21 @@ namespace Refactoring
             return String.Format("This is a debit transaction for ${0} from {1} to {2}", Amount, Sender, Recipient);
         }
 
-        public decimal CalculateInterest(double rateOfInterest, int numberOfYears, string interestPeriod)
+        public decimal CalculateInterest(double rateOfInterest, int numberOfYears, InterestPeriod interestPeriodEnum)
         {
             double numberOfPeriodsPerYear = 0;
-            switch (interestPeriod)
+            switch (interestPeriodEnum)
             {
-                case "Day":
+                case InterestPeriod.Day:
                     numberOfPeriodsPerYear = 365;
                     break;
-                case "Month":
+                case InterestPeriod.Month:
                     numberOfPeriodsPerYear = 12;
                     break;
-                case "Semester":
+                case InterestPeriod.Semester:
                     numberOfPeriodsPerYear = 2;
                     break;
-                case "Year":
+                case InterestPeriod.Year:
                     numberOfPeriodsPerYear = 1;
                     break;
             }
