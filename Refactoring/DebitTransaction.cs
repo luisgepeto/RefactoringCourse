@@ -7,7 +7,6 @@ namespace Refactoring
         public DebitTransaction(bool isDebit, decimal amount) : base(isDebit, amount)
         {
         }
-        private string Recipient { get; set; }
         private string Sender { get; set; }
         public void SetRecipient(string recipient)
         {

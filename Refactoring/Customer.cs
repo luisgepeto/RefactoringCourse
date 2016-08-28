@@ -11,7 +11,7 @@ namespace Refactoring
 
         public Customer()
         {
-            PersonalAccounts = new List<Account>();
+            _personalAccounts = new List<Account>();
         }
 
         public string FirstName
