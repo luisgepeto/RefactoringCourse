@@ -10,7 +10,7 @@ namespace RefactoringTests
         public void BycicleDriver_Move_SomeBike_ReturnsImMovingTire()
         {
             //Arrange
-            var bycicle = new Bycicle("Some Bycicle Model");
+            var bycicle = new Bycicle("Some Motorcycle Model");
             //Act
             var move = bycicle.Move();
             //Assert
@@ -21,7 +21,7 @@ namespace RefactoringTests
         public void BycicleDriver_Stop_SomeBike_ReturnsImMovingTire()
         {
             //Arrange
-            var bycicle = new Bycicle("Some Bycicle Model");
+            var bycicle = new Bycicle("Some Motorcycle Model");
             //Act
             var move = bycicle.Stop();
             //Assert
