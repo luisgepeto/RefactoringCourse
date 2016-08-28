@@ -39,25 +39,17 @@ namespace Refactoring
         }
     }
 
-    public abstract class InvestmentTransaction : Transaction
+    public class InvestmentTransaction : Transaction
     {
-        protected InvestmentTransaction(bool isDebit, decimal amount) : base(isDebit, amount)
+        public InvestmentTransaction(bool isDebit, decimal amount) : base(isDebit, amount)
         {
         }
         public string InvestmentFundName { get; set; }
+        public string InvestmentPeriod { get; set; }
 
         public string GetSummary()
         {
             return String.Format("This is an investment transaction for ${0} in fund {1}", Amount, InvestmentFundName);
-        }
-    }
-
-    public class LongTermInvestmentTransaction : InvestmentTransaction
-    {
-        //11. lazy class
-        public string InvestmentPeriod { get; set; }
-        public LongTermInvestmentTransaction(bool isDebit, decimal amount) : base(isDebit, amount)
-        {
         }
     }
 }
