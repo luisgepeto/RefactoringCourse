@@ -18,17 +18,16 @@ namespace Refactoring
         }
         public int GetPointsOnLicense()
         {
-            return License.PointsOnLicense;
+            return License.GetPointsOnLicense();
         }
 
         public bool IsLicenseValid()
         {                                                                                                         
-            return License.PointsOnLicense < 10;
+            return License.IsLicenseValid()
         }
         public string GenerateLicenseReport()
         {
-            return String.Format("Your license number is {0} and you have {1} points in your license. Your license expires on {2}. Thanks", License.LicenseNumber,
-                License.PointsOnLicense, License.LicenseExpireDate.ToString("d"));
+            return License.GenerateLicenseReport();
         }
 
         public int GetAge()
