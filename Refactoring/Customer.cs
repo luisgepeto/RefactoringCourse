@@ -4,6 +4,7 @@ namespace Refactoring
 {
     public class Customer
     {
+        //12 data class
         public Customer()
         {
             PersonalAccounts = new List<Account>();
