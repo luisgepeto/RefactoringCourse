@@ -7,14 +7,6 @@
             Wheel = new Wheel();
         }
         public Wheel Wheel { get; set; }
-        public virtual string Move()
-        {
-            return Wheel.Move();
-        }
-        public virtual string Stop()
-        {
-            return Wheel.Stop();
-        }
         public abstract int GetNumberOfWheels();
     }
 

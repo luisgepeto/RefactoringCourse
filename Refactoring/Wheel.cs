@@ -8,14 +8,6 @@ namespace Refactoring
             Tire = new Tire();
         }
         public Tire Tire { get; set; }
-        public string Move()
-        {
-            return Tire.Move();
-        }
-        public string Stop()
-        {
-            return Tire.Stop();
-        }
     }
     
     public class Tire
