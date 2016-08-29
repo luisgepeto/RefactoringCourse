@@ -12,7 +12,7 @@ namespace RefactoringTests
             //Arrange
             var bycicle = new Bycicle("Some Motorcycle Model");
             //Act
-            var move = bycicle.Move();
+            var move = bycicle.Wheel.Tire.Move();
             //Assert
             Assert.AreEqual("I am a moving tire", move, "The tire should be moving");
         }
@@ -23,7 +23,7 @@ namespace RefactoringTests
             //Arrange
             var bycicle = new Bycicle("Some Motorcycle Model");
             //Act
-            var move = bycicle.Stop();
+            var move = bycicle.Wheel.Tire.Stop();
             //Assert
             Assert.AreEqual("I am a stopping tire", move, "The tire should be moving");
         }
